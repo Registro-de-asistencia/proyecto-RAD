@@ -1,7 +1,12 @@
-window.addEventListener('load', function() {
-    const { electron } = require('electron');
-    const { ipcRenderer } = require('electron');
-    const { format } = require('date-fns');
+    const {
+        electron
+    } = require('electron');
+    const {
+        ipcRenderer
+    } = require('electron');
+    const {
+        format
+    } = require('date-fns');
 
     const formulario = document.querySelector('#formulario');
     const trabaja = document.querySelector('#trabaja');
@@ -94,4 +99,3 @@ window.addEventListener('load', function() {
     }
     formulario.addEventListener('keyup', filtrar);
     filtrar();
-});
