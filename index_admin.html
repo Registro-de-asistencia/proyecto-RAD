@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registro de asistencia digital</title>
+
+
+<!--================================BOOTSTRAP Y LINKS =========================================-->
+	
+	<link rel="icon" type="image/png" href="images/icons/icono.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">	   	
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
+<!--===============================================================================================-->
+
+<!--92 245-->
+</head>
+<body id="body1" >
+
+<!--=============================== BUSCADOR Y BOTONES =============================================-->
+<div class= "mt-5" style="width: 500px; left: auto; margin-left: 9%; overflow:hidden; box-sizing:border-box;">
+		<img src="images/logo-web4.png" width="120px" height="120px" style="position: absolute; margin-right: 3%;margin-top: -4.5%;">
+		<label class="badge badge-pill badge-dark" style="position:absolute;color: white;margin-top: -1%;margin-left: 9%;">REGISTRO DE ASISTENCIA DIGITAL</label>
+	<div class="glyphicon glyphicon-search" style="position: absolute; margin-top:6.2%; margin-left:33.9%; padding: 8px 15px; float:left;"></div>
+	<button id="botoncerrar" class="btn btn-dark glyphicon glyphicon-user" style="position: absolute; margin-top:6%; margin-left:70%; padding: 4px 4px; float:left; font-weight:bold;"> CERRAR SESIÓN</button>
+	<input type="text" id="formulario" class="form-control" style=" margin-top:7%;">
+	<div id="noencontrado"></div>
+	
+</div>
+<!--===============================================================================================-->
+
+
+
+		
+<!--=============================== TABLA CON BASE DE DATOS =============================================-->		
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1" style='text-align:center;'>Nombre</th>
+								<th class="column2" style='text-align:center;'>Apellido</th>
+								<th class="column4" style='text-align:center;'>Area</th>
+								<th class="column6" style='text-align:center;'>Hora de Entrada</th>
+								<th class="column7" style='text-align:center;'>Hora de Salida</th>
+								<th class="column8" style='text-align:center;'>Fecha</th>
+								<th class="column9" style='text-align:center;'>Información</th>
+							</tr>
+						</thead>
+						<tbody id="trabaja">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!--=============================== CONVERSACIONES CON INDEX.JS =============================================-->
+	<script>
+		const { electron } = require('electron');
+		const { ipcRenderer } = require('electron');
+		const { format } = require('date-fns');
+
+		const formulario = document.querySelector('#formulario');
+		const trabaja = document.querySelector('#trabaja');
+		const botonecerrar = document.querySelector('#botoncerrar');
+
+		const util = require('util');
+
+		const enviarcerrar = () =>{
+			r = confirm("¿Realmente quiere cerrar sesión?");
+    		if (r == true) {
+					ipcRenderer.send('Cierrasesion',"Hacer");
+      		} else {
+        		
+      		}
+		}
+
+
+		const agregar_trabajador = () =>{
+			ipcRenderer.send('Prueba2',"Hacer");
+		}
+
+		const enviarid = (id_trabajadorin) =>{
+			ipcRenderer.send('Prueba3',id_trabajadorin);
+		}
+		const enviarid2 = (id_trabajadorin) =>{
+			ipcRenderer.send('Prueba6',id_trabajadorin);
+		}
+
+		const enviareliminar = () =>{
+			ipcRenderer.send('eliminar',"eliminar");
+		}
+
+
+
+		botonecerrar.addEventListener('click',enviarcerrar);
+
+		ipcRenderer.on('ALERTA',(e,row) => {
+			alert("Se ha agregado un nuevo trabajador.")
+		});
+
+		ipcRenderer.on('ALERTAEDIT',(e,row) => {
+			alert("Se ha editado un trabajador.")
+		});
+		
+
+		const filtrar = () =>{
+
+
+			noencontrado.innerHTML = '';
+			let dato = "Hacer conexion con index";
+			ipcRenderer.send('Prueba1',dato);
+
+		ipcRenderer.on('Prueba1',(e,row) => {
+			trabaja.innerHTML = '';
+			var texto = formulario.value.toLowerCase();
+			var i=0;
+			while(i<row.length){
+					var nombret = row[i].Nombre.toLowerCase();
+					var apellidot = row[i].Apellido.toLowerCase();
+					var areat = row[i].Area.toLowerCase();
+
+					if(nombret.indexOf(texto) !== -1 ||  apellidot.indexOf(texto) !== -1 || areat.indexOf(texto) !== -1){
+						var fecha = format(new Date(row[i].Inicio),'dd/MM/yyyy');
+						var Hora_inicio = format(new Date(row[i].Inicio),'kk:mm:ss');
+						var Hora_fin = format(new Date(row[i].Fin),'kk:mm:ss');
+						lista_trabajadores = `
+													<td class="column1" style='text-align:center;'>${row[i].Nombre}</td>
+													<td class="column2" style='text-align:center;'>${row[i].Apellido}</td>
+													<td class="column4" style='text-align:center;'>${row[i].Area}</td>
+													<td class="column6" style='text-align:center;'>${Hora_inicio}</td>
+													<td class="column7" style='text-align:center;'>${Hora_fin}</td>
+													<td class="column8" style='text-align:center;'>${fecha}</td>
+													<td class="column10"><button onclick="enviarid2(${row[i].id_trabajador})" style='text-align:center;margin-left:25px;' class="btn btn-warning glyphicon glyphicon-user"></button></td>
+													
+													`;
+						trabaja.innerHTML += lista_trabajadores;
+					}
+					i=i+1;
+			}
+			if(trabaja.innerHTML === ''){
+				noencontrado.innerHTML = `<div class="btn btn-warning">Trabajador no encontrado.</div>`;
+			}
+			});
+		}
+		formulario.addEventListener('keyup',filtrar);
+		filtrar();
+	</script>
+
+<!--===============================================================================================-->
+	</body>
+</html>

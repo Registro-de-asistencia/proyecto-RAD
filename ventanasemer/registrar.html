@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Registro de asistencia digital</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../images/icons/icono.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../css/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../css/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body style= " background-image:url('../images/background7.png');">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+					<button id="iniciar" type="button" class="login100-form-btn" style="margin-top:-2%;position:absolute;margin-left: 21%;">
+							Iniciar Sesion 
+						</button>
+				<form class="login100-form validate-form">
+					<img src="../images/logo-web6.png" width="180px" height="180px" style="margin-left: 27%;">
+					<h4 style="color: white; font-weight: bold;margin-left: 40%; margin-top:-10%">R . A . D</h4>
+
+
+					<div id="bloque_info" style="margin-top:10%;background-color: white;border-color:black;text-align: center;padding: 2%;">
+						<h4 style="color: black; font-weight: bold;margin-top:2%;">Nombre :    no hay ingresos.</h4>
+						<h6 style="color: rgb(58, 58, 58);margin-top:7%;">Porfavor, Ingrese su asistencia con el lector de huellas y luego haga click en "Ingresar Registro".</h6>
+					</div>
+
+
+
+					<div style="margin-top: 10%;" class="container-login100-form-btn">
+						<button type="button" id="ingresar" class="login100-form-btn">
+							Ingresar Registro
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+
+
+<script>
+	const { electron } = require('electron');
+	const remote = require('electron').remote;
+	const { ipcRenderer } = require('electron');
+	const bingresa = document.querySelector('#ingresar');
+	const biniciar = document.querySelector('#iniciar');
+	const bloqueinfo = document.querySelector('#bloque_info');
+	var myVar;
+
+
+	const ingresar_login = ()=>{
+		let dato = "Hacer conexion con index";
+		ipcRenderer.send('ingresarlogin',dato);
+	}
+	
+
+	const ingresar_registro = () =>{
+		info = `
+		<h4 style="color: black; font-weight: bold;margin-top:2%;">Nombre: Usuario desconocido.</h4>
+		<h6 style="color: rgb(58, 58, 58);margin-top:7%;">Error, su huella no esta en la base de datos o hubo un error inesperado, vuelva a intentarlo.</h6>
+			   `
+		bloqueinfo.innerHTML = info;
+		myVar = setInterval(volver_normalidad, 4000);	
+	}
+	
+	function volver_normalidad(){
+		info = `
+				<h4 style="color: black; font-weight: bold;margin-top:2%;">Nombre: no hay ingresos.</h4>
+				<h6 style="color: rgb(58, 58, 58);margin-top:7%;">Porfavor, Ingrese su asistencia con el lector de huellas y luego haga click en "Ingresar Registro".</h6>
+			   `
+		bloqueinfo.innerHTML = info;
+		clearInterval(myVar);
+	}
+
+	bingresa.addEventListener('click',ingresar_registro);
+	biniciar.addEventListener('click',ingresar_login);
+	
+	
+</script>
+
+</body>
+</html>
