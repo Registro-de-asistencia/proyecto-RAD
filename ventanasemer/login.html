@@ -1,98 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<title>Registro de asistencia digital</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="../images/icons/icono.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../css/css/util.css">
-	<link rel="stylesheet" type="text/css" href="../css/css/main.css">
-<!--===============================================================================================-->
+    <title>Registro de asistencia digital</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="../images/icons/icono.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../css/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../css/css/main.css">
+    <!--===============================================================================================-->
 </head>
-<body style= " background-image:url('../images/background6.png');">
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-					<button id="volver" class="login100-form-btn" style="margin-top:-2%;position:absolute;margin-left: 23%;">
+
+<body style=" background-image:url('../images/background6.png');">
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <button id="volver" class="login100-form-btn" style="margin-top:-2%;position:absolute;margin-left: 23%;">
 							Volver
 						</button>
-				<form class="login100-form validate-form">
-					<span class="login100-form-logo">
+                <form class="login100-form validate-form">
+                    <span class="login100-form-logo">
 						<img src="../images/logo-web2.png" width="180px" height="180px" style="margin-right: 3%;">
 					</span>
 
-					<span class="login100-form-title p-b-34 p-t-27">
+                    <span class="login100-form-title p-b-34 p-t-27">
 						R . A . D
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="Ingrese la contraseña">
-						<input class="input100" type="password" id="contra" name="pass" placeholder="Contraseña">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>
+                    <div class="wrap-input100 validate-input" data-validate="Ingrese la contraseña">
+                        <input class="input100" type="password" id="contra" name="pass" placeholder="Contraseña">
+                        <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                    </div>
 
 
 
-					<div class="container-login100-form-btn">
-						<button id="initia" class="login100-form-btn">
+                    <div class="container-login100-form-btn">
+                        <button id="initia" class="login100-form-btn">
 							Iniciar sesión
 						</button>
-					</div>
+                    </div>
 
-				</form>
-			</div>
-		</div>
-	</div>
-	
-
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
+                </form>
+            </div>
+        </div>
+    </div>
 
 
-<script>
-	const { electron } = require('electron');
-	const { ipcRenderer } = require('electron');
-	const contra = document.querySelector('#contra');
-	const boton = document.querySelector('#initia');
-	const volver_ini = document.querySelector('#volver');
+    <div id="dropDownSelect1"></div>
 
+    <!--===============================================================================================-->
+    <script src="js/login.js"></script>
 
-	const volver_inicio= ()=>{
-		let dato = "Hacer conexion con index";
-		ipcRenderer.send('volverinicio',dato);
-	}
-
-	const logearse = () =>{
-
-		if(contra.value === "1"){
-    		let dato = "Hacer conexion con index";
-			ipcRenderer.send('logearse',dato);
-		}
-		else if(contra.value === "2"){
-    		let dato = "Hacer conexion con index";
-			ipcRenderer.send('logearse_admin',dato);
-		}
-		else{
-			alert("Contraseña erronea.")
-		}
-	}
-	
-
-	boton.addEventListener('click',logearse);
-	volver_ini.addEventListener('click',volver_inicio);
-	
-	
-</script>
 
 </body>
+
 </html>
