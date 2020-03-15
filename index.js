@@ -12,9 +12,9 @@ let idbotonel;
 let idbotoninfo;
 
 
-const {app, BrowserWindow, ipcRenderer, ipcMain, Menu , globalShortcut } =  require('electron');
+const { app, BrowserWindow, ipcRenderer, ipcMain, Menu, globalShortcut } = require('electron');
 const { webContents } = require("electron");
-const mysql =  require('mysql');
+const mysql = require('mysql');
 const path = require('path');
 const url = require('url')
 const { format } = require('date-fns');
@@ -24,9 +24,9 @@ const { format } = require('date-fns');
 ///////////////////////////////// CREAR CONEXION CON LA BASE DE DATOS //////////////////////////////////
 
 const connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: '241522',
+    host: 'localhost',
+    user: 'root',
+    password: '',
     database: "basededatos_rad"
 });
 
@@ -36,95 +36,91 @@ const connection = mysql.createConnection({
 //////////////////////////////////////APLICACION EN EJECUCION ////////////////////////////////////////// 
 
 app.on('ready', () => {
-    slashes:true;
+    slashes: true;
     crearventana_ingreso();
 
-	globalShortcut.register('CommandOrControl+R', function() {
+    globalShortcut.register('CommandOrControl+R', function() {
         mainWindows.reload()
     });
 
-    ipcMain.on('ingresarlogin',(e,row) => {
+    ipcMain.on('ingresarlogin', (e, row) => {
         crearventana_login();
         ventanaingreso.close();
     });
 
-    ipcMain.on('volverinicio',(e,row) => {
+    ipcMain.on('volverinicio', (e, row) => {
         crearventana_ingreso();
         ventanalogin.close();
     });
-    
-    ipcMain.on('logearse',(e,row) => {
+
+    ipcMain.on('logearse', (e, row) => {
         crearventana_dueño();
         ventanalogin.close();
     });
 
-    ipcMain.on('logearse_admin',(e,row) => {
+    ipcMain.on('logearse_admin', (e, row) => {
         crearventana_admin();
         ventanalogin.close();
     });
 
 
-    ipcMain.on('Cierrasesion',(e,row) => {
+    ipcMain.on('Cierrasesion', (e, row) => {
         mainWindows.close();
         app.relaunch();
     });
 
-    ipcMain.on('Prueba2',(e,row) => {
+    ipcMain.on('Prueba2', (e, row) => {
         crearventana_agregar();
     });
 
-    ipcMain.on('eliminar',(e,row) => {
+    ipcMain.on('eliminar', (e, row) => {
         crearventana_eliminar();
     });
 
-    ipcMain.on('Prueba6',(e,row) => {
+    ipcMain.on('Prueba6', (e, row) => {
         crearventana_info();
-        idbotoninfo=row;
+        idbotoninfo = row;
     });
 
-    ipcMain.on('Prueba3',(e,row) => {
+    ipcMain.on('Prueba3', (e, row) => {
         crearventana_editar();
-        idbotoned=row;
-    
+        idbotoned = row;
+
     });
 
-    ipcMain.on('enviarid',(e,row) => {
-        e.reply('editarid',idbotoned);   
+    ipcMain.on('enviarid', (e, row) => {
+        e.reply('editarid', idbotoned);
     });
 
-    ipcMain.on('infoid',(e,row) => {
-        e.reply('infoid',idbotoninfo);   
+    ipcMain.on('infoid', (e, row) => {
+        e.reply('infoid', idbotoninfo);
     });
 
-    ipcMain.on('salir',(e,row) => {
+    ipcMain.on('salir', (e, row) => {
         ventanaagregar.close();
     });
 
-    ipcMain.on('salireditar',(e,row) => {
+    ipcMain.on('salireditar', (e, row) => {
         ventanaeditar.close();
     });
 
-    ipcMain.on('salireliminar',(e,row) => {
+    ipcMain.on('salireliminar', (e, row) => {
         ventanaeliminar.close();
     });
 
-    ipcMain.on('salirinfo',(e,row) => {
+    ipcMain.on('salirinfo', (e, row) => {
         ventanainfo.close();
     });
-    
-}); 
 
-const template = [
-        {
-            label: 'Console',
-            submenu: [
-                {
-                    label: 'Mostrar devTOOLS',
-                    role: 'toggledevtools'
-                }
-            ]
-        }
-];
+});
+
+const template = [{
+    label: 'Console',
+    submenu: [{
+        label: 'Mostrar devTOOLS',
+        role: 'toggledevtools'
+    }]
+}];
 
 const menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(null);
@@ -134,14 +130,15 @@ Menu.setApplicationMenu(null);
 
 //////////////////////////////////////  CREAR VENTANAS ADICIONALES  ////////////////////////////////////////// 
 
-function crearventana_ingreso(){
+function crearventana_ingreso() {
 
-    ventanaingreso =  new BrowserWindow({
+    ventanaingreso = new BrowserWindow({
         title: "Registro de Asistencia digital",
-		webPreferences:{
-			nodeIntegration:true,
-            nodeIntegrationInWorker:true},
-            
+        webPreferences: {
+            nodeIntegration: true,
+            nodeIntegrationInWorker: true
+        },
+
         width: 1280,
         height: 720,
         fullscreen: false,
@@ -152,20 +149,21 @@ function crearventana_ingreso(){
         pathname: path.join(__dirname, `ventanasemer/registrar.html`),
         protocol: 'file',
         slashes: true
-    }) );
-    ventanaingreso.on('closed', ()=>{
-        ventanaingreso= null;
+    }));
+    ventanaingreso.on('closed', () => {
+        ventanaingreso = null;
     });
 }
 
-function crearventana_login(){
+function crearventana_login() {
 
-    ventanalogin =  new BrowserWindow({
+    ventanalogin = new BrowserWindow({
         title: "Registro de Asistencia digital",
-		webPreferences:{
-			nodeIntegration:true,
-            nodeIntegrationInWorker:true},
-            
+        webPreferences: {
+            nodeIntegration: true,
+            nodeIntegrationInWorker: true
+        },
+
         width: 1280,
         height: 720,
         fullscreen: false,
@@ -176,66 +174,69 @@ function crearventana_login(){
         pathname: path.join(__dirname, `ventanasemer/login.html`),
         protocol: 'file',
         slashes: true
-    }) );
-    ventanalogin.on('closed', ()=>{
-        ventanalogin= null;
+    }));
+    ventanalogin.on('closed', () => {
+        ventanalogin = null;
     });
 }
 
-function crearventana_dueño(){
+function crearventana_dueño() {
 
     mainWindows = new BrowserWindow({
-		webPreferences:{
-			nodeIntegration:true,
-			nodeIntegrationInWorker:true},
+        webPreferences: {
+            nodeIntegration: true,
+            nodeIntegrationInWorker: true
+        },
         width: 1280,
         height: 720,
         fullscreen: false,
         icon: __dirname + '/images/icons/icono.ico'
     });
-    
+
     mainWindows.loadURL(url.format({
         pathname: path.join(__dirname, `index.html`),
         protocol: 'file',
         slashes: true
-    }) );
+    }));
 
-    mainWindows.on('closed', ()=>{
+    mainWindows.on('closed', () => {
         app.quit();
     });
 }
 
-function crearventana_admin(){
+function crearventana_admin() {
 
     mainWindows = new BrowserWindow({
-		webPreferences:{
-			nodeIntegration:true,
-			nodeIntegrationInWorker:true},
+        webPreferences: {
+            nodeIntegration: true,
+            nodeIntegrationInWorker: true
+        },
         width: 1280,
         height: 720,
         fullscreen: false,
         icon: __dirname + '/images/icons/icono.ico'
     });
-    
+
     mainWindows.loadURL(url.format({
         pathname: path.join(__dirname, `index_admin.html`),
         protocol: 'file',
         slashes: true
-    }) );
-    mainWindows.on('closed', ()=>{
+    }));
+    mainWindows.on('closed', () => {
         app.quit();
     });
 }
 
 
-function crearventana_agregar(){
+function crearventana_agregar() {
 
-    ventanaagregar =  new BrowserWindow({
+    ventanaagregar = new BrowserWindow({
         title: "Agregar un Trabajador",
-		webPreferences:{
-			nodeIntegration:true,
-            nodeIntegrationInWorker:true},
-            
+        webPreferences: {
+            nodeIntegration: true,
+            nodeIntegrationInWorker: true
+        },
+
         width: 500,
         height: 630,
         fullscreen: false,
@@ -247,20 +248,21 @@ function crearventana_agregar(){
         pathname: path.join(__dirname, `ventanasemer/agregar.html`),
         protocol: 'file',
         slashes: true
-    }) );
-    ventanaagregar.on('closed', ()=>{
-        ventanaagregar= null;
+    }));
+    ventanaagregar.on('closed', () => {
+        ventanaagregar = null;
     });
 }
 
-function crearventana_editar(){
+function crearventana_editar() {
 
-    ventanaeditar =  new BrowserWindow({
+    ventanaeditar = new BrowserWindow({
         title: "Agregar un Trabajador",
-		webPreferences:{
-			nodeIntegration:true,
-            nodeIntegrationInWorker:true},
-            
+        webPreferences: {
+            nodeIntegration: true,
+            nodeIntegrationInWorker: true
+        },
+
         width: 500,
         height: 630,
         fullscreen: false,
@@ -272,20 +274,21 @@ function crearventana_editar(){
         pathname: path.join(__dirname, `ventanasemer/editar.html`),
         protocol: 'file',
         slashes: true
-    }) );
-    ventanaeditar.on('closed', ()=>{
-        ventanaeditar= null;
+    }));
+    ventanaeditar.on('closed', () => {
+        ventanaeditar = null;
     });
 }
 
-function crearventana_eliminar(){
+function crearventana_eliminar() {
 
-    ventanaeliminar =  new BrowserWindow({
+    ventanaeliminar = new BrowserWindow({
         title: "Agregar un Trabajador",
-		webPreferences:{
-			nodeIntegration:true,
-            nodeIntegrationInWorker:true},
-            
+        webPreferences: {
+            nodeIntegration: true,
+            nodeIntegrationInWorker: true
+        },
+
         width: 1150,
         height: 640,
         fullscreen: false,
@@ -297,20 +300,21 @@ function crearventana_eliminar(){
         pathname: path.join(__dirname, `ventanasemer/eliminar.html`),
         protocol: 'file',
         slashes: true
-    }) );
-    ventanaeliminar.on('closed', ()=>{
-        ventanaeliminar= null;
+    }));
+    ventanaeliminar.on('closed', () => {
+        ventanaeliminar = null;
     });
 }
 
-function crearventana_info(){
+function crearventana_info() {
 
-    ventanainfo =  new BrowserWindow({
+    ventanainfo = new BrowserWindow({
         title: "Agregar un Trabajador",
-		webPreferences:{
-			nodeIntegration:true,
-            nodeIntegrationInWorker:true},
-            
+        webPreferences: {
+            nodeIntegration: true,
+            nodeIntegrationInWorker: true
+        },
+
         width: 1150,
         height: 640,
         fullscreen: false,
@@ -322,9 +326,9 @@ function crearventana_info(){
         pathname: path.join(__dirname, `ventanasemer/infotra.html`),
         protocol: 'file',
         slashes: true
-    }) );
-    ventanainfo.on('closed', ()=>{
-        ventanainfo= null;
+    }));
+    ventanainfo.on('closed', () => {
+        ventanainfo = null;
     });
 }
 
@@ -335,7 +339,7 @@ function crearventana_info(){
 
 connection.connect(function(err) {
     // in case of error
-    if(err){
+    if (err) {
         console.log(err.code);
         console.log(err.fatal);
     }
@@ -345,17 +349,17 @@ connection.connect(function(err) {
 
 ////////////////////////// FUNCION PARA IMPRIMIR PRIMERA TABLA EN VENTANA MAIN ///////////////////////// 
 
-function imprimirtabla(){
+function imprimirtabla() {
     let query = 'SELECT * FROM trabajadores inner join Periodo_de_Trabajo on trabajadores.id_trabajador = Periodo_de_Trabajo.id_trabajador where eliminado=0';
-    connection.query(query,function(err,rows,fields){
-        if(err){
+    connection.query(query, function(err, rows, fields) {
+        if (err) {
             console.log("Error al hacer la consulta");
             console.log(err.fatal);
             return
         }
 
-        ipcMain.on('Prueba1',(e,row) => {
-                mainWindows.webContents.send('Prueba1',rows);
+        ipcMain.on('Prueba1', (e, row) => {
+            mainWindows.webContents.send('Prueba1', rows);
         });
     });
 }
@@ -364,17 +368,17 @@ function imprimirtabla(){
 
 ////////////////////////// FUNCION PARA IMPRIMIR PRIMERA TABLA EN VENTANA ELIMINAR ///////////////////////// 
 
-function imprimirtablaeliminar(){
+function imprimirtablaeliminar() {
     let query = 'SELECT * FROM trabajadores where eliminado=0';
-    connection.query(query,function(err,rows,fields){
-        if(err){
+    connection.query(query, function(err, rows, fields) {
+        if (err) {
             console.log("Error al hacer la consulta");
-            console.log(err.fatal,"holaaaaaaa");
+            console.log(err.fatal, "holaaaaaaa");
             return
         }
 
-        ipcMain.on('alertaeliminar1',(e,row) => {
-                e.reply('alertaeliminar',rows);
+        ipcMain.on('alertaeliminar1', (e, row) => {
+            e.reply('alertaeliminar', rows);
         });
     })
 }
@@ -385,44 +389,44 @@ function imprimirtablaeliminar(){
 
 ////////////// FUNCION PARA AGREGAR EN BD LO QUE RECIBE DE VENTANA AGREGAR TRABAJADOR ///////////////// 
 
-ipcMain.on('outputagrega',(e,row) => {
-          
-        let itemInfo = {
-            Nombre: row[0],
-            Apellido: row[1],
-            Rut: row[2],
-            Huella: 'asjdasdh',
-            Area: row[3],
-            Volumen_de_horas: row[4],
-            eliminado: 0,
-            imagen:row[5]
-        };
-        
-        connection.query('INSERT INTO trabajadores SET ?', itemInfo);
+ipcMain.on('outputagrega', (e, row) => {
 
-        let consulta = 'select * from trabajadores where Nombre="'+row[0]+'"';
-        connection.query(consulta,function(err,rows,fields){
-            if(err){
-                console.log("Error al hacer la consulta");
-                console.log(err.fatal);
-                return
-            }
-            connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, Fin, id_trabajador) VALUES (NOW(), NOW(), '+rows[0].id_trabajador+')');
-            imprimirtabla();
-            imprimirtablaeliminar();
-            ventanaagregar.close();
-            mainWindows.reload(); 
-        });
-            
+    let itemInfo = {
+        Nombre: row[0],
+        Apellido: row[1],
+        Rut: row[2],
+        Huella: 'asjdasdh',
+        Area: row[3],
+        Volumen_de_horas: row[4],
+        eliminado: 0,
+        imagen: row[5]
+    };
+
+    connection.query('INSERT INTO trabajadores SET ?', itemInfo);
+
+    let consulta = 'select * from trabajadores where Nombre="' + row[0] + '"';
+    connection.query(consulta, function(err, rows, fields) {
+        if (err) {
+            console.log("Error al hacer la consulta");
+            console.log(err.fatal);
+            return
+        }
+        connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, Fin, id_trabajador) VALUES (NOW(), NOW(), ' + rows[0].id_trabajador + ')');
+        imprimirtabla();
+        imprimirtablaeliminar();
+        ventanaagregar.close();
+        mainWindows.reload();
+    });
+
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////// FUNCION PARA EDITAR TRABAJADORES ///////////////// 
 
-ipcMain.on('outputedita',(e,row) => {
+ipcMain.on('outputedita', (e, row) => {
 
-    let id=row[0];      
+    let id = row[0];
     let itemInfo = {
         Nombre: row[1],
         Apellido: row[2],
@@ -434,69 +438,66 @@ ipcMain.on('outputedita',(e,row) => {
         imagen: row[6]
     };
 
-    let consulta = 'UPDATE trabajadores SET ? where id_trabajador="'+row[0]+'"';
+    let consulta = 'UPDATE trabajadores SET ? where id_trabajador="' + row[0] + '"';
     connection.query(consulta, itemInfo);
     imprimirtabla();
     imprimirtablaeliminar();
     ventanaeditar.close();
     mainWindows.reload();
-    
+
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////// FUNCION PARA ELLIMINAR TRABAJADORES /////////////////////////// 
 
-ipcMain.on('outputelimina',(e,row) => {
+ipcMain.on('outputelimina', (e, row) => {
 
-    let id=row;
-    console.log(id);  
+    let id = row;
+    console.log(id);
 
     let itemInfo = {
         eliminado: 1
     };
 
-    let consulta = 'UPDATE trabajadores SET ? where id_trabajador="'+id+'"';
+    let consulta = 'UPDATE trabajadores SET ? where id_trabajador="' + id + '"';
     connection.query(consulta, itemInfo);
     imprimirtabla();
     imprimirtablaeliminar();
     mainWindows.reload();
     ventanaeliminar.reload();
-    
+
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////// FUNCION VER TABLA EN INFORMACION DEL TRABAJADOR /////////////////////////// 
 
-ipcMain.on('tablainfo',(e,row) => {
-    let consulta = 'select * from trabajadores inner join Periodo_de_Trabajo on trabajadores.id_trabajador = Periodo_de_Trabajo.id_trabajador where Periodo_de_Trabajo.id_trabajador="'+idbotoninfo+'"';
-    connection.query(consulta,function(err,rows,fields){
-        if(err){
+ipcMain.on('tablainfo', (e, row) => {
+    let consulta = 'select * from trabajadores inner join Periodo_de_Trabajo on trabajadores.id_trabajador = Periodo_de_Trabajo.id_trabajador where Periodo_de_Trabajo.id_trabajador="' + idbotoninfo + '"';
+    connection.query(consulta, function(err, rows, fields) {
+        if (err) {
             console.log("Error al hacer la consulta");
             console.log(err.fatal);
             return
         }
-        e.reply('tablainfo1',rows);
+        e.reply('tablainfo1', rows);
     });
-    
+
 });
 
 //////////////////////////////////////// MENSAJES DE ALERTAS  ////////////////////////////////////////
 
-ipcMain.on('alertaxd',(e,row) => {
-    mainWindows.webContents.send('ALERTA',"HOLI");
+ipcMain.on('alertaxd', (e, row) => {
+    mainWindows.webContents.send('ALERTA', "HOLI");
 });
 
 
-ipcMain.on('alertaeditar',(e,row) => {
-    mainWindows.webContents.send('ALERTAEDIT',"HOLI");
+ipcMain.on('alertaeditar', (e, row) => {
+    mainWindows.webContents.send('ALERTAEDIT', "HOLI");
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 imprimirtabla();
 imprimirtablaeliminar();
-
-
-
