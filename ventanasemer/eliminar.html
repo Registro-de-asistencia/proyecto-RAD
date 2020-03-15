@@ -1,150 +1,160 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Eliminar un trabajador</title>
+    <meta charset="utf-8">
+    <title>Eliminar un trabajador</title>
 
 
-<!--================================BOOTSTRAP Y LINKS =========================================-->
-	
-	<link rel="icon" type="image/png" href="../images/icons/icono.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" href="../css/main.css">
-	<link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">	   	
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="../css/util.css">
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
-	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.css">
-<!--===============================================================================================-->
+    <!--================================BOOTSTRAP Y LINKS =========================================-->
 
-<!--92 245-->
+    <link rel="icon" type="image/png" href="../images/icons/icono.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../bootstrap4/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../css/util.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.css">
+    <!--===============================================================================================-->
+
+    <!--92 245-->
 </head>
-<body style= " background-image:url('../images/background5.png'); background-size: 100% 100%; background-attachment:fixed; " >
+
+<body style=" background-image:url('../images/background5.png'); background-size: 100% 100%; background-attachment:fixed; ">
 
     <div>
-		<img src="../images/logo-web6.png" width="120px" height="120px" style="margin-left: 45%;">
-        <h2  style="color: rgb(255, 255, 255); text-align: center; margin-top:0%; font-family:Vedur; font-style: bold; ">ELIMINAR TRABAJADOR</h1>
-      </div>  
+        <img src="../images/logo-web6.png" width="120px" height="120px" style="margin-left: 45%;">
+        <h2 style="color: rgb(255, 255, 255); text-align: center; margin-top:0%; font-family:Vedur; font-style: bold; ">ELIMINAR TRABAJADOR</h1>
+    </div>
 
-<!--=============================== BUSCADOR Y BOTONES =============================================-->
-	<div class= "mt-5" style="width: 500px; left: auto; margin-left: 7%; overflow:hidden; box-sizing:border-box;">
-		<div class="glyphicon glyphicon-search" style="position: absolute; margin-top:18.5%; margin-left:40%; padding: 9px 15px; float:left;"></div>
+    <!--=============================== BUSCADOR Y BOTONES =============================================-->
+    <div class="mt-5" style="width: 500px; left: auto; margin-left: 7%; overflow:hidden; box-sizing:border-box;">
+        <div class="glyphicon glyphicon-search" style="position: absolute; margin-top:18.5%; margin-left:40%; padding: 9px 15px; float:left;"></div>
         <button id="botonvolver" class="btn btn-dark glyphicon glyphicon-repeat" style="position: absolute; margin-top:18%; margin-left:75%; padding: 7px 15px; float:left; font-weight:bold;"> VOLVER</button>
         <input type="text" id="formulario" class="form-control" style=" margin-top:2%;">
-		<div id="noencontrado"></div>
-		
-	</div>
-<!--===============================================================================================-->
+        <div id="noencontrado"></div>
+
+    </div>
+    <!--===============================================================================================-->
 
 
 
-		
-<!--=============================== TABLA CON BASE DE DATOS =============================================-->		
 
-	<div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100">
-					<table>
-						<thead>
-							<tr class="table100-head">
-								<th class="column1" style='text-align:center;'>Nombre</th>
-								<th class="column2" style='text-align:center;'>Apellido</th>
-								<th class="column3" style='text-align:center;'>Rut</th>
-								<th class="column4" style='text-align:center;'>Area</th>
-								<th class="column10" style='text-align:center;'>Eliminar</th>
-							</tr>
-						</thead>
-						<tbody id="trabaja">
+    <!--=============================== TABLA CON BASE DE DATOS =============================================-->
 
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="limiter">
+        <div class="container-table100">
+            <div class="wrap-table100">
+                <div class="table100">
+                    <table>
+                        <thead>
+                            <tr class="table100-head">
+                                <th class="column1" style='text-align:center;'>Nombre</th>
+                                <th class="column2" style='text-align:center;'>Apellido</th>
+                                <th class="column3" style='text-align:center;'>Rut</th>
+                                <th class="column4" style='text-align:center;'>Area</th>
+                                <th class="column10" style='text-align:center;'>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trabaja">
 
-<!--=============================== CONVERSACIONES CON INDEX.JS =============================================-->
-	<script>
-		const { electron } = require('electron');
-		const { ipcRenderer } = require('electron');
-        const { format } = require('date-fns');
-        
-		const formulario = document.querySelector('#formulario');
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--=============================== CONVERSACIONES CON INDEX.JS =============================================-->
+    <!--- <script>
+        const {
+            electron
+        } = require('electron');
+        const {
+            ipcRenderer
+        } = require('electron');
+        const {
+            format
+        } = require('date-fns');
+
+        const formulario = document.querySelector('#formulario');
         const trabaja = document.querySelector('#trabaja');
         const boton1 = document.querySelector('#botonvolver');
 
 
-        const enviar = () =>{
-    		let dato = "Hacer conexion con index";
-    		ipcRenderer.send('salireliminar',dato);
-    	}
-        
-
-		const util = require('util');
-
-		const enviarid = (id_trabajadorin) =>{
-			r = confirm("¿Realmente quiere eliminarlo?");
-    		if (r == true) {
-					ipcRenderer.send('outputelimina',id_trabajadorin);
-					alert("Se ha eliminado un trabajador.")
-      		} else {
-        		
-      		}
-		}
-		
-
-		const filtrar = () =>{
+        const enviar = () => {
+            let dato = "Hacer conexion con index";
+            ipcRenderer.send('salireliminar', dato);
+        }
 
 
-			noencontrado.innerHTML = '';
-			let dato = "Hacer conexion con index";
-            ipcRenderer.send('alertaeliminar1',dato);
-            
-			ipcRenderer.on('alertaeliminar',(e,row) => {
-            console.log(row);
-			trabaja.innerHTML = '';
-			var texto = formulario.value.toLowerCase();
-			var i=0;
-			while(i<row.length){
-					var nombret = row[i].Nombre.toLowerCase();
-					var apellidot = row[i].Apellido.toLowerCase();
-					var areat = row[i].Area.toLowerCase();
+        const util = require('util');
+
+        const enviarid = (id_trabajadorin) => {
+            r = confirm("¿Realmente quiere eliminarlo?");
+            if (r == true) {
+                ipcRenderer.send('outputelimina', id_trabajadorin);
+                alert("Se ha eliminado un trabajador.")
+            } else {
+
+            }
+        }
+
+
+        const filtrar = () => {
+
+
+            noencontrado.innerHTML = '';
+            let dato = "Hacer conexion con index";
+            ipcRenderer.send('alertaeliminar1', dato);
+
+            ipcRenderer.on('alertaeliminar', (e, row) => {
+                console.log(row);
+                trabaja.innerHTML = '';
+                var texto = formulario.value.toLowerCase();
+                var i = 0;
+                while (i < row.length) {
+                    var nombret = row[i].Nombre.toLowerCase();
+                    var apellidot = row[i].Apellido.toLowerCase();
+                    var areat = row[i].Area.toLowerCase();
                     var rutt = row[i].Rut.toLowerCase();
 
-					if(nombret.indexOf(texto) !== -1 ||  apellidot.indexOf(texto) !== -1 || areat.indexOf(texto) !== -1 || rutt.indexOf(texto) !== -1){
-						lista_trabajadores = `
+                    if (nombret.indexOf(texto) !== -1 || apellidot.indexOf(texto) !== -1 || areat.indexOf(texto) !== -1 || rutt.indexOf(texto) !== -1) {
+                        lista_trabajadores = `
 													<td class="column1" style='text-align:center;'>${row[i].Nombre}</td>
 													<td class="column2" style='text-align:center;'>${row[i].Apellido}</td>
 													<td class="column3" style='text-align:center;'>${row[i].Rut}</td>
 													<td class="column4" style='text-align:center;'>${row[i].Area}</td>
 													<td class="column11" style='text-align:center;'><button style='margin-left:35px;' onclick="enviarid(${row[i].id_trabajador})" class="btn btn-danger glyphicon glyphicon-remove"></button></td>
 													`;
-						trabaja.innerHTML += lista_trabajadores;
-					}
-					i=i+1;
-			}
-			if(trabaja.innerHTML === ''){
-				noencontrado.innerHTML = `<div class="btn btn-warning">Trabajador no encontrado.</div>`;
-			}
-			});
-		}
-		formulario.addEventListener('keyup',filtrar);
-		filtrar();
+                        trabaja.innerHTML += lista_trabajadores;
+                    }
+                    i = i + 1;
+                }
+                if (trabaja.innerHTML === '') {
+                    noencontrado.innerHTML = `<div class="btn btn-warning">Trabajador no encontrado.</div>`;
+                }
+            });
+        }
+        formulario.addEventListener('keyup', filtrar);
+        filtrar();
 
-		boton1.addEventListener('click',enviar);
-	</script>
+        boton1.addEventListener('click', enviar);
+	</script> -->
+    <script src="js/eliminar.js"></script>
 
-<!--===============================================================================================-->
-	</body>
+    <!--===============================================================================================-->
+</body>
+
 </html>
