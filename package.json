@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "date-fns": "^2.11.0",
-    "electron": "file:electron",
+    "electron": "^8.1.1",
     "mysql": "^2.18.1",
     "path": "^0.12.7",
     "url": "^0.11.0"
