@@ -1,0 +1,52 @@
+body {
+    background-image: url('../../images/background5.png');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+div img {
+    width: 120px;
+    height: 120px;
+    margin-left: 45%;
+}
+
+div h2 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 0%;
+    font-family: Vedur;
+    font-style: bold;
+}
+
+.mt-5 {
+    width: 500px;
+    left: auto;
+    margin-left: 7%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.mt-5 div {
+    position: absolute;
+    margin-top: 18.5%;
+    margin-left: 40%;
+    padding: 9px 15px;
+    float: left;
+}
+
+.mt-5 #botonvolver {
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 75%;
+    padding: 7px 15px;
+    float: left;
+    font-weight: bold;
+}
+
+.mt-5 input {
+    margin-top: 2%;
+}
+
+.table100-head th {
+    text-align: center;
+}
