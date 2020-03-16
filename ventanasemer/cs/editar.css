@@ -1,0 +1,84 @@
+/*body*/
+
+body {
+    background-image: url('../../images/background4.png');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+
+/*image*/
+
+div img {
+    width: 120px;
+    height: 120px;
+    margin-left: 37%;
+}
+
+
+/*tittles blocks*/
+
+div #bloque {
+    display: block;
+    color: white;
+    width: 100%;
+}
+
+
+/*adding "cambio" label for one case particular*/
+
+div #bloque .cambio {
+    width: 60%;
+}
+
+
+/*h4*/
+
+h4 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 0%;
+    font-family: Vedur;
+    font-style: bold;
+}
+
+
+/*form label*/
+
+form {
+    margin-top: 3%;
+}
+
+form #div-standar {
+    margin-top: 3%;
+}
+
+form #div-notstandar {
+    margin-top: 1%;
+}
+
+#passwordHelpBlock {
+    color: #747474;
+    width: 100%;
+}
+
+form #horas {
+    margin-left: 30%;
+    size: 150px;
+    margin-top: 5px;
+}
+
+
+/*buttons*/
+
+button {
+    margin-top: 4%
+}
+
+#guardar {
+    margin-left: 25%;
+}
+
+#salir {
+    margin-left: 15%;
+}

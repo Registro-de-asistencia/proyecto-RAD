@@ -1,14 +1,22 @@
+/*cuerpo*/
+
 body {
     background-image: url('../../images/background3.png');
     background-size: 100% 100%;
     background-attachment: fixed;
 }
 
+
+/*imagen*/
+
 div img {
     width: 120px;
     height: 120px;
     margin-left: 37%;
 }
+
+
+/*titulo*/
 
 h4 {
     color: rgb(255, 255, 255);
@@ -18,9 +26,15 @@ h4 {
     font-style: bold;
 }
 
+
+/*Formulario*/
+
 form {
     margin-top: 3%
 }
+
+
+/*id bloque el cual corparten propiedades*/
 
 #bloque {
     display: block;
@@ -28,6 +42,9 @@ form {
     width: 100%"
 
 }
+
+
+/*Encapsulador que comparten propiedades*/
 
 #encapsulador {
     margin-top: 3%
@@ -37,10 +54,16 @@ form {
     margin-top: 1%;
 }
 
+
+/*mensaje del rut*/
+
 #passwordHelpBlock {
     color: #747474;
     width: 100%;
 }
+
+
+/*horas del trabajador*/
 
 #horas {
     margin-left: 30%;
@@ -52,6 +75,9 @@ form {
     color: white;
     width: 60%
 }
+
+
+/*botones*/
 
 button {
     margin-top: 4%

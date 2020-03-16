@@ -27,52 +27,52 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.css">
     <!--===============================================================================================-->
-
+    <link rel="stylesheet" type="text/css" href="cs/editar.css">
 </head>
 
-<body style=" background-image:url('../images/background4.png'); background-size: 100% 100%; background-attachment:fixed; ">
+<body>
 
 
     <!--=============================== CCREACION DE FORMULARIO =============================================-->
     <div>
 
-        <img src="../images/logo-web6.png" width="120px" height="120px" style="margin-left: 37%;">
-        <h4 style="color: rgb(255, 255, 255); text-align: center; margin-top:0%; font-family:Vedur; font-style: bold; ">EDITAR TRABAJADOR</h1>
+        <img src="../images/logo-web6.png">
+        <h4>EDITAR TRABAJADOR</h4>
     </div>
     <div>
-        <form class="container-table100" style="margin-top: 3%">
+        <form class="container-table100">
 
             <div class="form-row">
 
-                <div class="form-group col-md-6">
-                    <label class="badge badge-pill badge-dark" style="color: white; width: 100%" for="inputEmail4">Nombre</label>
+                <div id="div-standar" class="form-group col-md-6">
+                    <label id="bloque" class="badge badge-pill badge-dark" for="inputEmail4">Nombre</label>
                     <input id="Input_Nombre" type="text" class="form-control" placeholder="Ingrese el nombre">
 
                 </div>
 
 
-                <div style="margin-top: 3%;" class="form-group col-md-6">
-                    <label class="badge badge-pill badge-dark" style="color: white; width: 100%" for="inputPassword4">Apellido</label>
+                <div id="div-standar" class="form-group col-md-6">
+                    <label id="bloque" class="badge badge-pill badge-dark" for="inputPassword4">Apellido</label>
                     <input id="Input_Apellido" type="text" class="form-control" placeholder="Ingrese el apellido">
                 </div>
 
 
-                <div style="margin-top: 3%;" class="form-group col-md-6">
-                    <label class="badge badge-pill badge-dark" style="color: white; width: 100%" for="inputPassword4">Rut</label>
+                <div id="div-standar" class="form-group col-md-6">
+                    <label id="bloque" class="badge badge-pill badge-dark" for="inputPassword4">Rut</label>
                     <input id="Input_Rut" type="text" class="form-control" placeholder="Ingrese el rut">
-                    <h10 style="color: #747474; width: 100%" id="passwordHelpBlock" class="badge badge-pill badge-light">
+                    <h10 id="passwordHelpBlock" class="badge badge-pill badge-light">
                         El ingreso del rut debe ser de la siguiente forma. Ejemplo: 19.351.144-9
                     </h10>
                 </div>
 
-                <div style="margin-top: 3%;" class="form-group col-md-6">
-                    <label class="badge badge-pill badge-dark" style="color: white; width: 100%" for="inputPassword4">Imagen</label>
+                <div id="div-standar" class="form-group col-md-6">
+                    <label id="bloque" class="badge badge-pill badge-dark" for="inputPassword4">Imagen</label>
                     <input id="Input_Imagen" type="file" class="form-control">
                 </div>
 
 
-                <div style="margin-top: 1%;" class="form-group col-md-6">
-                    <label class="badge badge-pill badge-dark" style="color: white; width: 100%" for="inputState">Area</label>
+                <div id="div-notstandar" class="form-group col-md-6">
+                    <label id="bloque" class="badge badge-pill badge-dark" for="inputState">Area</label>
                     <select id="Input_Area" class="form-control">
                       <option>Lechero</option>
                       <option>Pajero</option>
@@ -82,8 +82,8 @@
                 </div>
 
 
-                <div style="margin-left: 30%; size:150px; margin-top: 5px;" class="form-group col-md-6">
-                    <label class="badge badge-pill badge-dark" style="color: white; width: 60%" for="inputPassword4">Horas Exijidas Diarias</label>
+                <div id="horas" class="form-group col-md-6">
+                    <label id="bloque" class="cambio" class="badge badge-pill badge-dark" for="inputPassword4">Horas Exijidas Diarias</label>
                     <input class="form-group" id="Input_Exijidas" type="number" name="quantity" placeholder="Ingrese la cantidad">
                 </div>
 
@@ -91,8 +91,8 @@
 
         </form>
 
-        <button style='margin-left:25%; margin-top:4%' id="guardar" class="btn btn-success">Guardar</button>
-        <button style='margin-left:15%; margin-top:4%' id="salir" class="btn btn-danger">Cerrar</button>
+        <button id="guardar" class="btn btn-success">Guardar</button>
+        <button id="salir" class="btn btn-danger">Cerrar</button>
 
         </div>
 
