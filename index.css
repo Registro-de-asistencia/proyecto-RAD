@@ -1,0 +1,84 @@
+/*inicio div*/
+
+.inicio {
+    margin-top: 2%;
+}
+
+
+/*div que guarda el resto*/
+
+.mt-5 {
+    width: 500px;
+    left: auto;
+    margin-left: 9%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/*imagen*/
+
+.mt-5 img {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    margin-right: 3%;
+    margin-top: -4.5%;
+}
+
+
+/*label*/
+
+.mt-5 label {
+    position: absolute;
+    color: white;
+    margin-top: -1%;
+    margin-left: 10%;
+}
+
+
+/*lupa*/
+
+#lupa {
+    position: absolute;
+    margin-top: 6.2%;
+    margin-left: 33.9%;
+    padding: 8px 15px;
+    float: left;
+}
+
+
+/*general para los botones*/
+
+.mt-5 button {
+    position: absolute;
+    margin-top: 6%;
+    padding: 7px 15px;
+    float: left;
+    font-weight: bold;
+}
+
+#botoneliminar {
+    margin-left: 63%;
+}
+
+#botonagregar {
+    margin-left: 42%;
+}
+
+#botoncerrar {
+    margin-top: 3%;
+    margin-left: 70%;
+    padding: 2px 2px;
+}
+
+
+/*buscador*/
+
+.mt-5 input {
+    margin-top: 7%;
+}
+
+.column {
+    text-align: center;
+}
