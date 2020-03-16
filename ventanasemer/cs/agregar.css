@@ -1,0 +1,66 @@
+body {
+    background-image: url('../../images/background3.png');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+div img {
+    width: 120px;
+    height: 120px;
+    margin-left: 37%;
+}
+
+h4 {
+    color: rgb(255, 255, 255);
+    margin-top: 0%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: bold;
+}
+
+form {
+    margin-top: 3%
+}
+
+#bloque {
+    display: block;
+    color: white;
+    width: 100%"
+
+}
+
+#encapsulador {
+    margin-top: 3%
+}
+
+#encapsulador .dif {
+    margin-top: 1%;
+}
+
+#passwordHelpBlock {
+    color: #747474;
+    width: 100%;
+}
+
+#horas {
+    margin-left: 30%;
+    size: 150px;
+    margin-top: 5px;
+}
+
+#horas label {
+    color: white;
+    width: 60%
+}
+
+button {
+    margin-top: 4%
+}
+
+#guardar {
+    margin-left: 25%;
+}
+
+#salir {
+    margin-left: 15%;
+}
