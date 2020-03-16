@@ -27,19 +27,19 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
     <!--===============================================================================================-->
-
+    <link rel="stylesheet" type="text/css" href="index.css">
     <!--92 245-->
 </head>
 
 <body id="body1">
 
     <!--=============================== BUSCADOR Y BOTONES =============================================-->
-    <div class="mt-5" style="width: 500px; left: auto; margin-left: 9%; overflow:hidden; box-sizing:border-box;">
-        <img src="images/logo-web4.png" width="120px" height="120px" style="position: absolute; margin-right: 3%;margin-top: -4.5%;">
-        <label class="badge badge-pill badge-dark" style="position:absolute;color: white;margin-top: -1%;margin-left: 9%;">REGISTRO DE ASISTENCIA DIGITAL</label>
-        <div class="glyphicon glyphicon-search" style="position: absolute; margin-top:6.2%; margin-left:33.9%; padding: 8px 15px; float:left;"></div>
-        <button id="botoncerrar" class="btn btn-dark glyphicon glyphicon-user" style="position: absolute; margin-top:6%; margin-left:70%; padding: 4px 4px; float:left; font-weight:bold;"> CERRAR SESIÓN</button>
-        <input type="text" id="formulario" class="form-control" style=" margin-top:7%;">
+    <div class="mt-5">
+        <img src="images/logo-web4.png">
+        <label class="badge badge-pill badge-dark">REGISTRO DE ASISTENCIA DIGITAL</label>
+        <div id="lupa" class="glyphicon glyphicon-search"></div>
+        <button id="botoncerrar" class="btn btn-dark glyphicon glyphicon-user"> CERRAR SESIÓN</button>
+        <input type="text" id="formulario" class="form-control">
         <div id="noencontrado"></div>
 
     </div>
@@ -57,14 +57,14 @@
                     <table>
                         <thead>
                             <tr class="table100-head">
-                                <th class="column1" style='text-align:center;'>Nombre</th>
-                                <th class="column2" style='text-align:center;'>Apellido</th>
-                                <th class="column4" style='text-align:center;'>Area</th>
-                                <th class="column6" style='text-align:center;'>Hora de Entrada</th>
-                                <th class="column7" style='text-align:center;'>Hora de Salida</th>
-                                <th class="column8" style='text-align:center;'>Fecha</th>
-                                <th class="column9" style='text-align:center;'>Información</th>
-                            </tr>
+                                <th class="column">Nombre</th>
+                                <th class="column">Apellido</th>
+                                <th class="column">Area</th>
+                                <th class="column">Hora de Entrada</th>
+                                <th class="column">Hora de Salida</th>
+                                <th class="column">Fecha</th>
+                                <th class="column">Información</th>
+
                         </thead>
                         <tbody id="trabaja">
 
