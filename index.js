@@ -189,7 +189,7 @@ function crearventana_dueño() {
         },
         width: 1280,
         height: 720,
-        fullscreen: false,
+        fullscreen: true,
         icon: __dirname + '/images/icons/icono.ico'
     });
 
@@ -213,7 +213,7 @@ function crearventana_admin() {
         },
         width: 1280,
         height: 720,
-        fullscreen: false,
+        fullscreen: true,
         icon: __dirname + '/images/icons/icono.ico'
     });
 
