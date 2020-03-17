@@ -1,14 +1,22 @@
+/*body*/
+
 body {
     background-image: url('../../images/background5.png');
     background-size: 100% 100%;
     background-attachment: fixed;
 }
 
+
+/*image*/
+
 div img {
     width: 120px;
     height: 120px;
     margin-left: 45%;
 }
+
+
+/*h2*/
 
 div h2 {
     color: rgb(255, 255, 255);
@@ -18,6 +26,9 @@ div h2 {
     font-style: bold;
 }
 
+
+/*box volver*/
+
 .mt-5 {
     width: 500px;
     left: auto;
@@ -26,6 +37,9 @@ div h2 {
     box-sizing: border-box;
 }
 
+
+/*magnifying glass*/
+
 .mt-5 div {
     position: absolute;
     margin-top: 18.5%;
@@ -33,6 +47,9 @@ div h2 {
     padding: 9px 15px;
     float: left;
 }
+
+
+/*button volver*/
 
 .mt-5 #botonvolver {
     position: absolute;
@@ -43,9 +60,15 @@ div h2 {
     font-weight: bold;
 }
 
+
+/*input*/
+
 .mt-5 input {
     margin-top: 2%;
 }
+
+
+/*workers information */
 
 .table100-head th {
     text-align: center;

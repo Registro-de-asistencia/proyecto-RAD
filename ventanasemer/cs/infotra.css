@@ -1,0 +1,156 @@
+/*body*/
+
+body {
+    background-color: white;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+
+/*report box*/
+
+#report {
+    margin-top: 2%;
+    overflow: hidden;
+}
+
+
+/*general button box*/
+
+#report button {
+    display: block;
+    float: left;
+    color: white;
+}
+
+#generarinforme {
+    margin-left: 40%;
+}
+
+#salir {
+    margin-left: 3%;
+}
+
+
+/*to-pdf box*/
+
+#to-pdf {
+    background-color: white;
+}
+
+#logo {
+    width: 160px;
+    height: 160px;
+    margin-top: 5%;
+    margin-left: 43%;
+}
+
+h2 {
+    text-align: center;
+    color: rgb(41, 41, 41);
+    margin-top: 1%;
+    font-family: Vedur;
+    font-style: bold;
+}
+
+h3 {
+    color: white;
+    background-color: rgb(23, 11, 37);
+    width: 100%;
+    text-align: center;
+    padding: 0.25em 0.4em;
+    margin-top: 30%;
+}
+
+div .column {
+    margin-top: 5%;
+}
+
+
+/*information box*/
+
+#box {
+    margin-top: -1%;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+#accommodated {
+    margin-top: 4%;
+}
+
+
+/*user image*/
+
+#box .imgRedonda {
+    float: left;
+    margin-top: 1.5%;
+    margin-left: 7%;
+    width: 200px;
+    height: 200px;
+}
+
+
+/*encapsulator information*/
+
+#box .encapsulator {
+    float: left;
+    overflow: hidden;
+    border-style: dashed;
+    border-color: rgb(170, 170, 170);
+    border-radius: 25px;
+    width: 700px;
+    margin-left: 10%;
+    background-color: rgb(221, 221, 221);
+}
+
+
+/*header information*/
+
+#box .encapsulator .header {
+    margin-left: 7%;
+    float: left;
+    margin-top: 3%;
+    overflow: hidden;
+}
+
+#box .encapsulator .distint-header {
+    float: left;
+    margin-top: 3%;
+    overflow: hidden;
+}
+
+#box .encapsulator .header label,
+#box .encapsulator .distint-header label {
+    float: left;
+    margin-left: 2%;
+    color: black;
+    background-color: white;
+    text-align: center;
+    padding: 0.25em 0.4em;
+}
+
+#box .encapsulator .header .info,
+#box .encapsulator .distint-header .info {
+    color: white;
+    background-color: rgb(44, 44, 44);
+    width: 50%;
+}
+
+#box .encapsulator .distint-header .info-two {
+    color: white;
+    background-color: rgb(44, 44, 44);
+}
+
+#encapsulation_workers {
+    margin-top: 2%;
+}
+
+tr {
+    color: rgb(255, 255, 255);
+}
+
+tr th {
+    text-align: center;
+}

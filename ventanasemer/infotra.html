@@ -30,67 +30,67 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.css">
     <!--===============================================================================================-->
-
+    <link rel="stylesheet" type="text/css" href="cs/infotra.css">
     <!--92 245-->
 </head>
 
-<body style="background-color:white; background-size: 100% 100%; background-attachment:fixed; ">
+<body>
 
-    <div style="margin-top:2%;overflow:hidden;">
-        <button style='margin-left:40%;float:left;color: white;' id="generarinforme" class="btn btn-success">Generar Informe</button>
-        <button style='margin-left:3%;float:left;color: white;' id="salir" class="btn btn-primary">Volver</button>
+    <div id="report">
+        <button id="generarinforme" class="btn btn-success">Generar Informe</button>
+        <button id="salir" class="btn btn-primary">Volver</button>
     </div>
 
-    <div id="to-pdf" style="background-color: white;">
+    <div id="to-pdf">
 
         <div>
-            <img src="../images/logo-web.png" width="160px" height="160px" style="margin-top:5%;margin-left: 43%;">
-            <h2 style="text-align: center; color: rgb(41, 41, 41); margin-top:1%; font-family:Vedur; font-style: bold; ">INFORME DE TRABAJADOR</h2>
+            <img id="logo" src="../images/logo-web.png">
+            <h2>INFORME DE TRABAJADOR</h2>
         </div>
 
-        <h3 class="column1" style="margin-top:5%;color:white; background-color:rgb(23, 11, 37);width:100%;text-align: center;padding: 0.25em 0.4em;">Datos del trabajador</h3>
-        <div style="margin-top:-1%; overflow: hidden;background-color: rgb(255, 255, 255); width:100%;">
-            <div style="margin-top:4%;"></div>
-            <img style="float: left;margin-top:1.5%; margin-left:7%;width:200px; height:200px;" id="imagen_usuario" src="" class='imgRedonda'>
-            <div style="float:left;overflow: hidden;border-style: dashed;border-color:rgb(170, 170, 170); border-radius: 25px; width:700px; margin-left:10%; background-color: rgb(221, 221, 221);">
-                <div style="margin-top:4%;"></div>
-                <div style="margin-left:7%;float:left;margin-top: 3%; overflow: hidden;">
-                    <label style="float:left;margin-left:2%; color:white; background-color:rgb(44, 44, 44);width: 50%;text-align: center;padding: 0.25em 0.4em;"> Nombre </label>
-                    <label id="nombreR" style="float:left;margin-left:2%; color:black; background-color:white;text-align: center;padding: 0.25em 0.4em;"> Sebastian Ignacio </label>
+        <h3 class="column">Datos del trabajador</h3>
+        <div id="box">
+            <div id="accommodated"></div>
+            <img id="imagen_usuario" src="" class='imgRedonda'>
+            <div class="encapsulator">
+                <div id="accommodated"></div>
+                <div class="header">
+                    <label class="info"> Nombre </label>
+                    <label id="nombreR"> Sebastian Ignacio </label>
                 </div>
-                <div style="float:left;margin-top: 3%; overflow: hidden;">
-                    <label style="float:left;margin-left:2%; color:white; background-color:rgb(44, 44, 44);width: 50%;text-align: center;padding: 0.25em 0.4em;"> Apellido </label>
-                    <label id="apellidoR" style="float:left;margin-left:2%; color:black; background-color:white;text-align: center;padding: 0.25em 0.4em;"> Molina Bastidas </label>
+                <div class="distint-header">
+                    <label class="info"> Apellido </label>
+                    <label id="apellidoR"> Molina Bastidas </label>
                 </div>
-                <div style="float:left;margin-top: 3%; overflow: hidden;">
-                    <label style="float:left;margin-left:2%; color:white; background-color:rgb(44, 44, 44);width: 50%;text-align: center;padding: 0.25em 0.4em;"> Rut </label>
-                    <label id="rutR" style="float:left;margin-left:2%; color:black; background-color:white;text-align: center;padding: 0.25em 0.4em;"> 19.351.144-9 </label>
+                <div class="distint-header">
+                    <label class="info"> Rut </label>
+                    <label id="rutR"> 19.351.144-9 </label>
                 </div>
-                <div style="margin-left:7%;float:left;margin-top: 3%; overflow: hidden;">
-                    <label style="float:left;margin-left:2%; color:white; background-color:rgb(44, 44, 44);width: 50%;text-align: center;padding: 0.25em 0.4em;"> Area </label>
-                    <label id="areaR" style="float:left;margin-left:2%; color:black; background-color:white;text-align: center;padding: 0.25em 0.4em;"> Tractorista </label>
+                <div class="header">
+                    <label class="info"> Area </label>
+                    <label id="areaR"> Tractorista </label>
                 </div>
-                <div style="float:left;margin-top: 3%; overflow: hidden;">
-                    <label style="float:left;margin-left:2%; color:white; background-color:rgb(44, 44, 44);text-align: center;padding: 0.25em 0.4em;"> Horas exigidas diarias </label>
-                    <label id="exigidasR" style="margin-left:5%; color:black; background-color:white;text-align: center;padding: 0.25em 0.4em;"> 9 </label>
+                <div class="distint-header">
+                    <label class="info-two"> Horas exigidas diarias </label>
+                    <label id="exigidasR"> 9 </label>
                 </div>
-                <div style="float:left;margin-top: 3%; overflow: hidden;">
-                    <label style="float:left;margin-left:2%; color:white; background-color:rgb(44, 44, 44);text-align: center;padding: 0.25em 0.4em;"> Total de horas extras trabajadas </label>
-                    <label id="extrasR" style="margin-left:5%; color:black; background-color:white;text-align: center;padding: 0.25em 0.4em;"> 9 </label>
+                <div class="distint-header">
+                    <label class="info-two"> Total de horas extras trabajadas </label>
+                    <label id="extrasR"> 9 </label>
                 </div>
             </div>
 
-            <h3 style="background-color:rgb(23, 11, 37); color:white;margin-top:30%;width:100%;text-align: center;padding: 0.25em 0.4em;">Tabla de periodos trabajados</h3>
-            <div style="margin-top:2%;">
+            <h3>Tabla de periodos trabajados</h3>
+            <div id="encapsulation_workers">
                 <table>
                     <thead>
-                        <tr style=" color:rgb(255, 255, 255);">
-                            <th class="column1" style='text-align:center;'>Nombre</th>
-                            <th class="column2" style='text-align:center;'>Apellido</th>
-                            <th class="column4" style='text-align:center;'>Area</th>
-                            <th class="column6" style='text-align:center;'>Hora de Entrada</th>
-                            <th class="column7" style='text-align:center;'>Hora de Salida</th>
-                            <th class="column8" style='text-align:center;'>Fecha</th>
+                        <tr>
+                            <th class="column1">Nombre</th>
+                            <th class="column2">Apellido</th>
+                            <th class="column4">Area</th>
+                            <th class="column6">Hora de Entrada</th>
+                            <th class="column7">Hora de Salida</th>
+                            <th class="column8">Fecha</th>
                         </tr>
                     </thead>
                     <tbody id="trabaja">
