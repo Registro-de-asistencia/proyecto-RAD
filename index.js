@@ -238,7 +238,7 @@ function crearventana_agregar() {
         },
 
         width: 500,
-        height: 630,
+        height: 830,
         fullscreen: false,
         frame: false,
         icon: __dirname + '/images/icons/icono.ico'
@@ -264,7 +264,7 @@ function crearventana_editar() {
         },
 
         width: 500,
-        height: 630,
+        height: 830,
         fullscreen: false,
         frame: false,
         icon: __dirname + '/images/icons/icono.ico'
@@ -317,7 +317,7 @@ function crearventana_info() {
 
         width: 1150,
         height: 640,
-        fullscreen: false,
+        fullscreen: true,
         frame: false,
         icon: __dirname + '/images/icons/icono.ico'
     });
