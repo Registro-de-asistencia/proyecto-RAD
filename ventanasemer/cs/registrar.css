@@ -1,0 +1,55 @@
+/*body*/
+
+body {
+    background-image: url('../../images/background7.png');
+}
+
+
+/*iniciar button*/
+
+#iniciar {
+    margin-top: -2%;
+    position: absolute;
+    margin-left: 21%;
+}
+
+
+/*image*/
+
+img {
+    width: 180px;
+    height: 180px;
+    margin-left: 27%;
+}
+
+
+/*text rad*/
+
+#rad {
+    color: white;
+    font-weight: bold;
+    margin-left: 40%;
+    margin-top: -10%;
+}
+
+
+/*info box*/
+
+#bloque_info {
+    margin-top: 10%;
+    background-color: white;
+    border-color: black;
+    text-align: center;
+    padding: 2%;
+}
+
+#bloque_info h4 {
+    color: black;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+#bloque_info h6 {
+    color: rgb(58, 58, 58);
+    margin-top: 7%;
+}
