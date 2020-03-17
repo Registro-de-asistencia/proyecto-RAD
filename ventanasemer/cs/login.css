@@ -1,0 +1,23 @@
+/*body*/
+
+body {
+    background-image: url('../../images/background6.png');
+}
+
+
+/*volver button*/
+
+#volver {
+    margin-top: -2%;
+    position: absolute;
+    margin-left: 23%;
+}
+
+
+/*image*/
+
+.login100-form-logo img {
+    width: 180px;
+    height: 180px;
+    margin-right: 3%;
+}
