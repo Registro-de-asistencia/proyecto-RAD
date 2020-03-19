@@ -45,15 +45,16 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
 
-                    <label id="bloque" class="badge badge-pill badge-dark" for="inputEmail4">Nombre</label>
+                    <label id="bloque" class="badge badge-pill badge-dark" pattern="[a-zA-Z]*" for="inputEmail4">Nombre</label>
                     <input id="Input_Nombre" type="text" class="form-control" placeholder="Ingrese el nombre">
-
+                    <div id="errornom"></div>
                 </div>
 
 
                 <div id="encapsulador" class="form-group col-md-6">
                     <label id="bloque" class="badge badge-pill badge-dark" for="inputPassword4">Apellido</label>
                     <input id="Input_Apellido" type="text" class="form-control" placeholder="Ingrese el apellido">
+                    <div id="errorape"></div>
                 </div>
 
 
@@ -63,6 +64,7 @@
                     <h10 id="passwordHelpBlock" class="badge badge-pill badge-light">
                         El ingreso del rut debe ser de la siguiente forma. Ejemplo: 19.351.144-9
                     </h10>
+                    <div id="errorrut"></div>
                 </div>
 
                 <div id="encapsulador" class="form-group col-md-6">
@@ -85,6 +87,7 @@
                     <label class="badge badge-pill badge-dark" for="inputPassword4">Horas Exijidas Diarias</label>
                     <input class="form-group" id="Input_Exijidas" type="number" name="quantity" placeholder="Ingrese la cantidad">
                 </div>
+                <div id="errorhoras"></div>
 
 
 
@@ -99,6 +102,7 @@
 
         <!--=============================== SCRIPT PARA ENVIAR LO QUE SE ESCRIBE EN FORMULARIO ====================================-->
         <!--============================================= A INDEX.JS ==============================================================-->
+        <script src="js/validator.js"></script>
         <script src="js/agregar.js"></script>
 
 

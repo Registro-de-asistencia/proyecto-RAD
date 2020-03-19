@@ -26,7 +26,7 @@ const { format } = require('date-fns');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '241522',
     database: "basededatos_rad"
 });
 
@@ -123,7 +123,7 @@ const template = [{
 }];
 
 const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(null);
+Menu.setApplicationMenu(menu);
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -240,7 +240,7 @@ function crearventana_agregar() {
         width: 500,
         height: 830,
         fullscreen: false,
-        frame: false,
+        frame: true,
         icon: __dirname + '/images/icons/icono.ico'
     });
 
