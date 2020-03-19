@@ -7,8 +7,8 @@ var imagenformulario = document.querySelector('#Input_Imagen');
 var errores_nombre = document.querySelector('#errornom');
 var errores_apellido = document.querySelector('#errorape');
 var errores_horas = document.querySelector('#errorhoras');
-const boton_guardar = document.querySelector('#guardar');
-var a,b,c,d,e;
+var errores_imagen = document.querySelector('#errorimagen');
+var boton_guardar = document.querySelector('#guardar');
 //var formulario = document.querySelector('#form').value;
 
 
@@ -27,7 +27,6 @@ nombreout.addEventListener('blur', function() {
     } else {
 
         errores_nombre.innerHTML = '';
-        a=1;
     }
 });
 
@@ -38,11 +37,8 @@ apellidoout.addEventListener('blur', function() {
 
     if (apellido.null == 0 || apellido.length == 0 || !val.test(apellido)) {
         errores_apellido.innerHTML = `<span id="error_apellido">APELLIDO INVÁLIDO.</span>`;
-        b=0;
-        callback(b);
     } else {
         errores_apellido.innerHTML = '';
-        b=1;
     }
 });
 
@@ -51,18 +47,22 @@ exigidasout.addEventListener('blur', function() {
     required_time = Number(exigidasout.value);
 
     if (required_time <= 0) {
-        e=0;
         errores_horas.innerHTML = `<span id="error_hora">DEBE INGRESAR UN NUMERO POSITIVO DE HORAS.</span>`;
     } else {
         errores_horas.innerHTML = '';
-        e=1;
 
     }
 
 });
 
-console.log("test",a,b,e);
-if (a==1 && b==1 && e==1){
-    console.log("hola");
-    boton_guardar.disabled=false;
-}
+/*image form*/
+imagenformulario.addEventListener('blur', function() {
+    form_image = imagenformulario.value;
+    if (form_image.null == 0 || form_image.length == 0) {
+        errores_imagen.innerHTML = `<span id="error_imagen">POR FAVOR COLOQUE UNA IMAGEN.</span>`;
+    } else {
+        errores_imagen.innerHTML = '';
+    }
+
+
+});

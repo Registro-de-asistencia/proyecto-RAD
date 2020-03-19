@@ -128,3 +128,15 @@ button {
     border-left: 20px;
     box-sizing: border-box;
 }
+
+#errorimagen{
+    margin-left: 20%;
+    box-sizing: border-box;
+}
+
+#error_imagen{
+    color: white;
+    background-color: red;
+    border-left: 20px;
+    box-sizing: border-box;
+}
