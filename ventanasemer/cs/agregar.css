@@ -116,6 +116,18 @@ button {
     border-left: 20px;
     box-sizing: border-box;
 }
+#errorrut{
+    margin-top: 5px;
+    margin-left: 35%;
+    box-sizing: border-box;
+}
+
+#error_rut{
+    color: white;
+    background-color: red;
+    border-left: 20px;
+    box-sizing: border-box;
+}
 
 #errorhora{
     margin-left: 35%;
