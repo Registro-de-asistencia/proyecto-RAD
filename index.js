@@ -501,6 +501,10 @@ ipcMain.on('recargar_login',(e,row) =>{
     ventanalogin.reload();
 });
 
+ipcMain.on('recargar_agregar',(e,row) =>{
+    ventanaagregar.reload();
+});
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 imprimirtabla();
