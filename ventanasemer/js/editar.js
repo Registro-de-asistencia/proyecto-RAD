@@ -130,10 +130,17 @@ function envia2() {
             imagenformulario.files[0].path
         ];
     }
-    ipcRenderer.send('outputedita', output);
+
+    if(nombreout.value == '' || apellidoout.value == '' ||rutout.value == '' ||areaout.value == '' || exijidasout.value == '' ){
+        alert("Ha dejado un o espacios sin rellenar.")
+        ipcRenderer.send('recargar_editar', "output");
+    }
+    else{
+        ipcRenderer.send('outputedita', output);
+        enviar3();
+    }
 }
 
 
 boton1.addEventListener('click', enviar);
-boton2.addEventListener('click', enviar3);
 boton2.addEventListener('click', envia2);
