@@ -26,7 +26,7 @@ const { format } = require('date-fns');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '241522',
+    password: '',
     database: "basededatos_rad"
 });
 
@@ -266,7 +266,7 @@ function crearventana_editar() {
         width: 500,
         height: 830,
         fullscreen: false,
-        frame: false,
+        frame: true,
         icon: __dirname + '/images/icons/icono.ico'
     });
 

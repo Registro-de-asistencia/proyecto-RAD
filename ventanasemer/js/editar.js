@@ -37,7 +37,7 @@ function sacadatos(id_boton) {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '241522',
+        password: '',
         database: 'Basededatos_Rad'
     });
 
@@ -62,7 +62,7 @@ function sacadatos(id_boton) {
         document.getElementById("Input_Exijidas").value = "" + rows[0].Volumen_de_horas;
         document.getElementById("Input_Area").value = "" + rows[0].Area;
         urlimagen = rows[0].imagen;
-        console.log("holaaaaaa");
+
 
     });
 }
@@ -81,7 +81,7 @@ function envia2() {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '241522',
+        password: '',
         database: 'Basededatos_Rad'
     });
 

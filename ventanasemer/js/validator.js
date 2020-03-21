@@ -16,48 +16,48 @@ var boton_guardar = document.querySelector('#guardar');
 function checkRut(rut) {
     // Despejar Puntos
     console.log(rut);
-    var valor = rut.value.replace('.','');
+    var valor = rut.value.replace('.', '');
     // Despejar Guión
-    valor = valor.replace('-','');
-    
+    valor = valor.replace('-', '');
+
     // Aislar Cuerpo y Dígito Verificador
-    cuerpo = valor.slice(0,-1);
+    cuerpo = valor.slice(0, -1);
     dv = valor.slice(-1).toUpperCase();
-    
+
     // Formatear RUN
-    rut.value = cuerpo + '-'+ dv
-    
+    rut.value = cuerpo + '-' + dv
+
     // Si no cumple con el mínimo ej. (n.nnn.nnn)
-    if(cuerpo.length < 7) { rut.setCustomValidity("RUT Incompleto"); return false;}
-    
+    if (cuerpo.length < 7) { rut.setCustomValidity("RUT Incompleto"); return false; }
+
     // Calcular Dígito Verificador
     suma = 0;
     multiplo = 2;
-    
+
     // Para cada dígito del Cuerpo
-    for(i=1;i<=cuerpo.length;i++) {
-    
+    for (i = 1; i <= cuerpo.length; i++) {
+
         // Obtener su Producto con el Múltiplo Correspondiente
         index = multiplo * valor.charAt(cuerpo.length - i);
-        
+
         // Sumar al Contador General
         suma = suma + index;
-        
+
         // Consolidar Múltiplo dentro del rango [2,7]
-        if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
-  
+        if (multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
+
     }
-    
+
     // Calcular Dígito Verificador en base al Módulo 11
     dvEsperado = 11 - (suma % 11);
-    
+
     // Casos Especiales (0 y K)
-    dv = (dv == 'K')?10:dv;
-    dv = (dv == 0)?11:dv;
-    
+    dv = (dv == 'K') ? 10 : dv;
+    dv = (dv == 0) ? 11 : dv;
+
     // Validar que el Cuerpo coincide con su Dígito Verificador
-    if(dvEsperado != dv) { rut.setCustomValidity("RUT Inválido"); return false; }
-    
+    if (dvEsperado != dv) { rut.setCustomValidity("RUT Inválido"); return false; }
+
     // Si todo sale bien, eliminar errores (decretar que es válido)
     rut.setCustomValidity('');
 }
@@ -73,7 +73,7 @@ nombreout.addEventListener('blur', function() {
 
     if (name.null == 0 || name.length == 0 || !val.test(name)) {
         errores_nombre.innerHTML = `<span id="error_nombre">NOMBRE INVÁLIDO.</span>`;
-    
+
     } else {
 
         errores_nombre.innerHTML = '';
@@ -101,10 +101,9 @@ apellidoout.addEventListener('blur', function() {
 rutout.addEventListener('blur', function() {
     rut = rutout;
     const testrut = checkRut(rut);
-    if(testrut == false){
+    if (testrut == false) {
         errores_rut.innerHTML = `<span id="error_rut">RUT INVÁLIDO.</span>`;
-    }
-    else{
+    } else {
         errores_rut.innerHTML = '';
     }
 });
@@ -135,5 +134,3 @@ exigidasout.addEventListener('blur', function() {
     }
 
 });
-
-
