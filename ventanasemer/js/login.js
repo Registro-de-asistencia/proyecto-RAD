@@ -12,6 +12,7 @@ const volver_ini = document.querySelector('#volver');
 const volver_inicio = () => {
     let dato = "Hacer conexion con index";
     ipcRenderer.send('volverinicio', dato);
+    //console.log("volviendo");
 }
 
 const logearse = () => {
