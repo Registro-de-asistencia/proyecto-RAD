@@ -131,8 +131,8 @@ function envia2() {
         ];
     }
 
-    if (nombreout.value == '' || apellidoout.value == '' || rutout.value == '' || areaout.value == '' || exijidasout.value == '') {
-        alert("Ha dejado un o espacios sin rellenar.")
+    if (nombreout.value == '' || apellidoout.value == '' || rutout.value == '' || areaout.value == '' || exijidasout.value == '' || error_nom.innerHTML === 'NOMBRE INVÁLIDO.' || error_ape.innerHTML === 'APELLIDO INVÁLIDO.' || error_rut.innerHTML === 'RUT INVÁLIDO.' || error_imagen.innerHTML === 'POR FAVOR COLOQUE UNA IMAGEN.' || error_horas === 'DEBE INGRESAR UN NUMERO POSITIVO DE HORAS.') {
+        alert("Ha dejado uno o varios espacios sin rellenar o no ha cumplido con el formato de la entrada de información, vuelva a intentarlo.");
         ipcRenderer.send('recargar_editar', "output");
     } else {
         ipcRenderer.send('outputedita', output);

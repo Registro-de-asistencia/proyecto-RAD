@@ -91,36 +91,22 @@ button {
     margin-left: 15%;
 }
 
-#errornom{
-    margin-top: 5px;
-    margin-left: 35%;
-    box-sizing: border-box;
-}
-
-#error_nombre{
+#error_nom{
     color: white;
     background-color: red;
     border-left: 20px;
     box-sizing: border-box;
 }
 
-#errorape{
-    margin-top: 5px;
-    margin-left: 35%;
-    box-sizing: border-box;
-}
 
-#error_apellido{
+
+#error_ape{
     color: white;
     background-color: red;
     border-left: 20px;
     box-sizing: border-box;
 }
-#errorrut{
-    margin-top: 5px;
-    margin-left: 35%;
-    box-sizing: border-box;
-}
+
 
 #error_rut{
     color: white;
@@ -129,22 +115,15 @@ button {
     box-sizing: border-box;
 }
 
-#errorhora{
-    margin-left: 35%;
-    box-sizing: border-box;
-}
 
-#error_hora{
+#error_horas{
     color: white;
     background-color: red;
     border-left: 20px;
     box-sizing: border-box;
 }
 
-#errorimagen{
-    margin-left: 20%;
-    box-sizing: border-box;
-}
+
 
 #error_imagen{
     color: white;

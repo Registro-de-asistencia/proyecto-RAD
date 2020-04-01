@@ -1,5 +1,5 @@
 var rutout = document.querySelector('#Input_Rut');
-var errores_rut = document.querySelector('#errorrut');
+var errores_rut = document.querySelector('#error_rut');
 
 console.log(rutout);
 
@@ -8,7 +8,7 @@ rutout.addEventListener('blur', function() {
     rut = rutout;
     const testrut = checkRut(rut);
     if (testrut == false) {
-        errores_rut.innerHTML = `<span id="error_rut">RUT INVÁLIDO.</span>`;
+        errores_rut.innerHTML = `RUT INVÁLIDO.`;
     } else {
         errores_rut.innerHTML = '';
     }

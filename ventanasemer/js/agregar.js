@@ -14,6 +14,10 @@ const url = require ('url');
 const boton1 = document.querySelector('#salir');
 const boton2 = document.querySelector('#guardar');
 
+
+// if (error_nom.innerHTML === 'NOMBRE INVÁLIDO.' || error_ape.innerHTML === 'APELLIDO INVÁLIDO.' || error_rut.innerHTML === 'RUT INVÁLIDO.' || error_imagen.innerHTML === 'POR FAVOR COLOQUE UNA IMAGEN.' || error_horas === 'DEBE INGRESAR UN NUMERO POSITIVO DE HORAS.' ){
+
+
 const enviar = () => {
     let dato = "Hacer conexion con index";
     ipcRenderer.send('salir', dato);
@@ -48,8 +52,8 @@ const agrega_trab_formu = () => {
             imagenformulario.src
         ];
 
-        if(output[0] == '' ||output[1] == '' ||output[2] == '' ||output[3] == '' || output[4] == '' || output[5] == ''){
-            alert("Ha dejado un o espacios sin rellenar.")
+        if(output[0] == '' ||output[1] == '' ||output[2] == '' ||output[3] == '' || output[4] == '' || output[5] == '' || error_nom.innerHTML === 'NOMBRE INVÁLIDO.' || error_ape.innerHTML === 'APELLIDO INVÁLIDO.' || error_rut.innerHTML === 'RUT INVÁLIDO.' || error_imagen.innerHTML === 'POR FAVOR COLOQUE UNA IMAGEN.' || error_horas === 'DEBE INGRESAR UN NUMERO POSITIVO DE HORAS.'){
+            alert("Ha dejado uno o varios espacios sin rellenar o no ha cumplido con el formato de la entrada de información, vuelva a intentarlo.");
             ipcRenderer.send('recargar_agregar', "output");
     
         }
@@ -71,8 +75,8 @@ const agrega_trab_formu = () => {
             imagenformulario.files[0].path
         ];
 
-        if(output[0] == '' ||output[1] == '' ||output[2] == '' ||output[3] == '' || output[4] == '' || output[5] == ''){
-            alert("Ha dejado un o espacios sin rellenar.")
+        if(output[0] == '' ||output[1] == '' ||output[2] == '' ||output[3] == '' || output[4] == '' || output[5] == '' || error_nom.innerHTML === 'NOMBRE INVÁLIDO.' || error_ape.innerHTML === 'APELLIDO INVÁLIDO.' || error_rut.innerHTML === 'RUT INVÁLIDO.' || error_imagen.innerHTML === 'POR FAVOR COLOQUE UNA IMAGEN.' || error_horas === 'DEBE INGRESAR UN NUMERO POSITIVO DE HORAS.'){
+            alert("Ha dejado uno o varios espacios sin rellenar o no ha cumplido con el formato de la entrada de información, vuelva a intentarlo.");
             ipcRenderer.send('recargar_agregar', "output");
     
         }
