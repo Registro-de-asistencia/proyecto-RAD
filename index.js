@@ -10,6 +10,7 @@ let ventanainfo;
 let idbotoned;
 let idbotonel;
 let idbotoninfo;
+const util = require('util');
 
 
 const { app, BrowserWindow, ipcRenderer, ipcMain, Menu, globalShortcut } = require('electron');
@@ -26,7 +27,7 @@ const { format } = require('date-fns');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '241522',
+    password: '',
     database: "basededatos_rad"
 });
 
@@ -68,7 +69,12 @@ app.on('ready', () => {
         mainWindows.close();
         app.relaunch();
     });
-
+    /*
+    ipcMain.on('ingreso_periodo_de_tiempo', (e, row) => {
+        mainWindows.close();
+        app.relaunch();
+    });
+*/
     ipcMain.on('Prueba2', (e, row) => {
         crearventana_agregar();
     });
@@ -111,6 +117,9 @@ app.on('ready', () => {
     ipcMain.on('salirinfo', (e, row) => {
         ventanainfo.close();
     });
+
+    //registrarjs
+
 
 });
 
@@ -469,6 +478,19 @@ ipcMain.on('outputelimina', (e, row) => {
 
 });
 
+
+///////////////////////consulta por rut///////////////////////
+/*
+ipcMain.on('search_rut', (e, row) => {
+    let rut = row[2];
+    let consulta = 'select * from trabajadores where Nombre="' + rut + '"';
+
+});*/
+
+
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////// FUNCION VER TABLA EN INFORMACION DEL TRABAJADOR /////////////////////////// 
@@ -504,6 +526,8 @@ ipcMain.on('recargar_login', (e, row) => {
 ipcMain.on('recargar_agregar', (e, row) => {
     ventanaagregar.reload();
 });
+
+
 
 ipcMain.on('recargar_editar', (e, row) => {
     ventanaeditar.reload();

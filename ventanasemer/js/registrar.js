@@ -5,10 +5,11 @@ const remote = require('electron').remote;
 const {
     ipcRenderer
 } = require('electron');
+const mysql = require('mysql');
 const bingresa = document.querySelector('#ingresar');
 const biniciar = document.querySelector('#iniciar');
 const bloqueinfo = document.querySelector('#bloque_info');
-const user_enter = document.querySelector('#user');
+
 var myVar;
 
 
@@ -19,18 +20,44 @@ const ingresar_login = () => {
     ipcRenderer.send('ingresarlogin', dato);
 }
 
-const enter_rut = () => {
+bingresa.addEventListener('click', () => {
+    const user_enter = document.querySelector('#Input_Rut');
+    console.log("hola");
+    value_rut = user_enter.value;
+    const connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'basededatos_rad'
+    });
 
-}
+    connection.connect(function(err) {
+        // in case of error
+        if (err) {
+            console.log(err.code);
+            console.log(err.fatal);
+        }
+    });
 
-const ingresar_registro = () => {
-    info = `
-<h4 style="color: black; font-weight: bold;margin-top:2%;">Nombre: Usuario desconocido.</h4>
-<h6 style="color: rgb(58, 58, 58);margin-top:7%;">Error, su huella no esta en la base de datos o hubo un error inesperado, vuelva a intentarlo.</h6>
-       `
-    bloqueinfo.innerHTML = info;
-    myVar = setInterval(volver_normalidad, 4000);
-}
+    let consulta = 'select * from trabajadores where rut="' + value_rut + '"';
+    console.log(consulta);
+    connection.query(consulta, function(err, rows, fields) {
+        if (err) {
+            alert("Error al hacer la consulta");
+            console.log(err.fatal);
+            return
+        }
+        connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, Fin, id_trabajador) VALUES (NOW(), NOW(), ' + rows[0].id_trabajador + ')');
+        // ipcRenderer.send('ingreso_periodo_de_tiempo', "output");
+
+    });
+
+    //alert('Se a ingresado un período de tiempo nuevo');
+
+
+
+
+});
 
 function volver_normalidad() {
     info = `
@@ -41,5 +68,5 @@ function volver_normalidad() {
     clearInterval(myVar);
 }
 
-bingresa.addEventListener('click', ingresar_registro);
+
 biniciar.addEventListener('click', ingresar_login);
