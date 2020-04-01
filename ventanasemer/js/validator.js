@@ -1,17 +1,17 @@
 var nombreout = document.querySelector('#Input_Nombre');
 var apellidoout = document.querySelector('#Input_Apellido');
-var rutout = document.querySelector('#Input_Rut');
+//var rutout = document.querySelector('#Input_Rut');
 var areaout = document.querySelector('#Input_Area');
 var exigidasout = document.querySelector('#Input_Exijidas');
 var imagenformulario = document.querySelector('#Input_Imagen');
 var errores_nombre = document.querySelector('#errornom');
 var errores_apellido = document.querySelector('#errorape');
-var errores_rut = document.querySelector('#errorrut');
+//var errores_rut = document.querySelector('#errorrut');
 var errores_horas = document.querySelector('#errorhoras');
 var errores_imagen = document.querySelector('#errorimagen');
 var boton_guardar = document.querySelector('#guardar');
 
-
+/*
 //función para verificar rut que luego se ocupara
 function checkRut(rut) {
     // Despejar Puntos
@@ -62,7 +62,7 @@ function checkRut(rut) {
     rut.setCustomValidity('');
 }
 
-
+*/
 
 
 /*name validation!*/
@@ -97,7 +97,7 @@ apellidoout.addEventListener('blur', function() {
 
 
 
-/*rut validation!*/
+/*rut validation!
 rutout.addEventListener('blur', function() {
     rut = rutout;
     const testrut = checkRut(rut);
@@ -108,7 +108,7 @@ rutout.addEventListener('blur', function() {
     }
 });
 
-
+*/
 
 
 
