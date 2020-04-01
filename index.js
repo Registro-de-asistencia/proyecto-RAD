@@ -26,7 +26,7 @@ const { format } = require('date-fns');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '241522',
+    password: '',
     database: "basededatos_rad"
 });
 
@@ -497,15 +497,15 @@ ipcMain.on('alertaeditar', (e, row) => {
     mainWindows.webContents.send('ALERTAEDIT', "HOLI");
 });
 
-ipcMain.on('recargar_login',(e,row) =>{
+ipcMain.on('recargar_login', (e, row) => {
     ventanalogin.reload();
 });
 
-ipcMain.on('recargar_agregar',(e,row) =>{
+ipcMain.on('recargar_agregar', (e, row) => {
     ventanaagregar.reload();
 });
 
-ipcMain.on('recargar_editar',(e,row) =>{
+ipcMain.on('recargar_editar', (e, row) => {
     ventanaeditar.reload();
 });
 

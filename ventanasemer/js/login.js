@@ -21,7 +21,7 @@ const volver_inicio = () => {
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '241522',
+    password: '',
     database: 'Basededatos_Rad'
 });
 
@@ -34,19 +34,19 @@ connection.connect(function(err) {
 });
 
 
-function comprobar(objeto){
+function comprobar(objeto) {
 
     if (user.value.trim() == "dueño" && contra.value == objeto[0].password) {
         let dato = "Hacer conexion con index";
         ipcRenderer.send('logearse', dato);
-        
+
     } else if (user.value.trim() == "observador" && contra.value == objeto[0].password) {
         let dato = "Hacer conexion con index";
         ipcRenderer.send('logearse_admin', dato);
     } else {
-            alert("Contraseña erronea.")
-            ipcRenderer.send('recargar_login',"hacer conexion con index");
-        }
+        alert("Contraseña erronea.")
+        ipcRenderer.send('recargar_login', "hacer conexion con index");
+    }
 }
 
 const logearse = () => {

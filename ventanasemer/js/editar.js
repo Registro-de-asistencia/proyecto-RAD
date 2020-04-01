@@ -37,7 +37,7 @@ function sacadatos(id_boton) {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '241522',
+        password: '',
         database: 'Basededatos_Rad'
     });
 
@@ -81,7 +81,7 @@ function envia2() {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '241522',
+        password: '',
         database: 'Basededatos_Rad'
     });
 
@@ -131,11 +131,10 @@ function envia2() {
         ];
     }
 
-    if(nombreout.value == '' || apellidoout.value == '' ||rutout.value == '' ||areaout.value == '' || exijidasout.value == '' ){
+    if (nombreout.value == '' || apellidoout.value == '' || rutout.value == '' || areaout.value == '' || exijidasout.value == '') {
         alert("Ha dejado un o espacios sin rellenar.")
         ipcRenderer.send('recargar_editar', "output");
-    }
-    else{
+    } else {
         ipcRenderer.send('outputedita', output);
         enviar3();
     }

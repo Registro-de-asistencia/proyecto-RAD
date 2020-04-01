@@ -21,3 +21,9 @@ body {
     height: 180px;
     margin-right: 3%;
 }
+
+#enter {
+    display: block;
+    margin: 0 auto;
+    margin-left: 500px;
+}
