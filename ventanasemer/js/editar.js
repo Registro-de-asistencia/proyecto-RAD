@@ -37,8 +37,8 @@ function sacadatos(id_boton) {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '',
-        database: 'Basededatos_Rad'
+        password: '241522',
+        database: 'basededatos_rad'
     });
 
     connection.connect(function(err) {
@@ -81,8 +81,8 @@ function envia2() {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '',
-        database: 'Basededatos_Rad'
+        password: '241522',
+        database: 'basededatos_rad'
     });
 
     connection.connect(function(err) {

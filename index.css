@@ -9,34 +9,36 @@
 
 .inicio {
     margin-top: 2%;
+    
 }
 
+#botoncerrar{
+    float: right;
+    margin-right: 10px;
+}
 
-/*div que guarda el resto*/
+#lupa{
+    float: left;
+    margin-top: 10px;
+    margin-left: 8px;
+}
 
-.mt-5 {
+#formulario{
     width: 500px;
-    left: auto;
-    margin-left: 9%;
-    overflow: hidden;
-    box-sizing: border-box;
+    float: left;
 }
 
-
-/*imagen*/
-
-.mt-5 img {
+img {
     width: 120px;
     height: 120px;
-    position: absolute;
-    margin-right: 3%;
-    margin-top: -4.5%;
 }
 
 
-/*label*/
+#input{
+    overflow: hidden;
+}
 
-.mt-5 label {
+.inicio label {
     position: absolute;
     color: white;
     margin-top: -1%;
@@ -44,48 +46,12 @@
 }
 
 
-/*lupa*/
-
-#lupa {
-    position: absolute;
-    margin-top: 6.2%;
-    margin-left: 33.9%;
-    padding: 8px 15px;
-    float: left;
+#botonagregar{
+    margin-left: 50px;
 }
-
-
-/*general para los botones*/
-
-.mt-5 button {
-    position: absolute;
-    margin-top: 6%;
-    padding: 7px 15px;
-    float: left;
-    font-weight: bold;
+#botoneliminar{
+    margin-left: 7px;
 }
-
-#botoneliminar {
-    margin-left: 63%;
-}
-
-#botonagregar {
-    margin-left: 42%;
-}
-
-#botoncerrar {
-    margin-top: 3%;
-    margin-left: 70%;
-    padding: 2px 2px;
-}
-
-
-/*seeker*/
-
-.mt-5 input {
-    margin-top: 7%;
-}
-
 .column {
     text-align: center;
 }

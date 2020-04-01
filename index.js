@@ -26,7 +26,7 @@ const { format } = require('date-fns');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '241522',
     database: "basededatos_rad"
 });
 
@@ -188,8 +188,8 @@ function crearventana_dueño() {
             nodeIntegrationInWorker: true
         },
         width: 1280,
-        height: 720,
-        fullscreen: true,
+        height: 1024,
+        fullscreen: false,
         icon: __dirname + '/images/icons/icono.ico'
     });
 
@@ -212,7 +212,7 @@ function crearventana_admin() {
             nodeIntegrationInWorker: true
         },
         width: 1280,
-        height: 720,
+        height: 1024,
         fullscreen: true,
         icon: __dirname + '/images/icons/icono.ico'
     });
@@ -335,7 +335,7 @@ function crearventana_info() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////// 
 
 
-/////////////////////////////////  CONECTARSE CON LA BASE DE DATOS   ////////////////////////////////////
+/////////////////////////////////  VERIFICAR CONEXION CON LA BASE DE DATOS   ////////////////////////////////////
 
 connection.connect(function(err) {
     // in case of error
