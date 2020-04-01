@@ -4,11 +4,10 @@ var apellidoout = document.querySelector('#Input_Apellido');
 var areaout = document.querySelector('#Input_Area');
 var exigidasout = document.querySelector('#Input_Exijidas');
 var imagenformulario = document.querySelector('#Input_Imagen');
-var errores_nombre = document.querySelector('#errornom');
-var errores_apellido = document.querySelector('#errorape');
-//var errores_rut = document.querySelector('#errorrut');
-var errores_horas = document.querySelector('#errorhoras');
-var errores_imagen = document.querySelector('#errorimagen');
+var errores_nombre = document.querySelector('#error_nom');
+var errores_apellido = document.querySelector('#error_ape');
+var errores_horas = document.querySelector('#error_horas');
+var errores_imagen = document.querySelector('#error_imagen');
 var boton_guardar = document.querySelector('#guardar');
 
 /*
@@ -72,7 +71,7 @@ nombreout.addEventListener('blur', function() {
     const val = new RegExp('^[a-zA-Z ]+$', 'i');
 
     if (name.null == 0 || name.length == 0 || !val.test(name)) {
-        errores_nombre.innerHTML = `<span id="error_nombre">NOMBRE INVÁLIDO.</span>`;
+        errores_nombre.innerHTML = `NOMBRE INVÁLIDO.`;
 
     } else {
 
@@ -86,7 +85,7 @@ apellidoout.addEventListener('blur', function() {
     const val = new RegExp('^[a-zA-Z ]+$', 'i');
 
     if (apellido.null == 0 || apellido.length == 0 || !val.test(apellido)) {
-        errores_apellido.innerHTML = `<span id="error_apellido">APELLIDO INVÁLIDO.</span>`;
+        errores_apellido.innerHTML = `APELLIDO INVÁLIDO.`;
     } else {
         errores_apellido.innerHTML = '';
     }
@@ -116,7 +115,7 @@ rutout.addEventListener('blur', function() {
 imagenformulario.addEventListener('blur', function() {
     form_image = imagenformulario.value;
     if (form_image.null == 0 || form_image.length == 0) {
-        errores_imagen.innerHTML = `<span id="error_imagen">POR FAVOR COLOQUE UNA IMAGEN.</span>`;
+        errores_imagen.innerHTML = `POR FAVOR COLOQUE UNA IMAGEN.`;
     } else {
         errores_imagen.innerHTML = '';
     }
@@ -127,7 +126,7 @@ exigidasout.addEventListener('blur', function() {
     required_time = Number(exigidasout.value);
 
     if (required_time <= 0) {
-        errores_horas.innerHTML = `<span id="error_hora">DEBE INGRESAR UN NUMERO POSITIVO DE HORAS.</span>`;
+        errores_horas.innerHTML = `DEBE INGRESAR UN NUMERO POSITIVO DE HORAS.`;
     } else {
         errores_horas.innerHTML = '';
 
