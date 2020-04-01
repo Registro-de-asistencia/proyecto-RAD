@@ -21,9 +21,7 @@ const ingresar_login = () => {
 }
 
 bingresa.addEventListener('click', () => {
-    const user_enter = document.querySelector('#Input_Rut');
-    console.log("hola");
-    value_rut = user_enter.value;
+    
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
@@ -38,37 +36,45 @@ bingresa.addEventListener('click', () => {
             console.log(err.fatal);
         }
     });
-
-
-    let consulta = 'select * from trabajadores where rut="' + value_rut + '"';
-    console.log(consulta);
-    connection.query(consulta, function(err, rows, fields) {
-        if (err) {
-            alert("Error al hacer la consulta");
-            console.log(err.fatal);
-            return
-        }
-        connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, Fin, id_trabajador) VALUES (NOW(), NOW(), ' + rows[0].id_trabajador + ')');
+    
+    if(error_rut.innerHTML === 'RUT INVÁLIDO.' ){
+        alert("Ha intentado ingresar un rut inválido o no está en la base de datos.")
         let dato = "Hacer conexion con index";
-        ipcRenderer.send('newdato', dato);
-        alert("Se ha ingresado un nuevo registro.");
+        ipcRenderer.send('recargar_ventana_ingreso', dato);
+    }
+    else{
 
-    });
+        const user_enter = document.querySelector('#Input_Rut');
+        console.log("hola");
+        value_rut = user_enter.value;
+        
 
+        let consulta = 'select * from trabajadores where rut="' + value_rut + '"';
+        console.log(consulta);
+        connection.query(consulta, function(err, rows, fields) {
+            if (err) {
+                alert("Error al hacer la consulta");
+                console.log(err.fatal);
+                return
+            }
+            if (rows.length == 0){
+                alert("El rut ingresado no está en la base de datos, porfavor vuelta a intentarlo.")
+                let dato = "Hacer conexion con index";
+                ipcRenderer.send('recargar_ventana_ingreso', dato);
+            }
+            else{
+                connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, Fin, id_trabajador) VALUES (NOW(), NOW(), ' + rows[0].id_trabajador + ')');
+                let dato = "Hacer conexion con index";
+                ipcRenderer.send('newdato', dato);
+                alert("Se ha ingresado un nuevo registro.");
+            }
 
-
+        });
+    }
 
 
 });
 
-function volver_normalidad() {
-    info = `
-        <h4 style="color: black; font-weight: bold;margin-top:2%;">Nombre: no hay ingresos.</h4>
-        <h6 style="color: rgb(58, 58, 58);margin-top:7%;">Porfavor, Ingrese su asistencia con el lector de huellas y luego haga click en "Ingresar Registro".</h6>
-       `
-    bloqueinfo.innerHTML = info;
-    clearInterval(myVar);
-}
 
 
 biniciar.addEventListener('click', ingresar_login);

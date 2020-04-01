@@ -116,8 +116,12 @@ app.on('ready', () => {
     ipcMain.on('newdato', (e, row) => {
         myVar = setInterval(  ()=>{
             ventanaingreso.close();
-        }   , 3000);
+        }   , 2000);
         app.relaunch();
+    });
+
+    ipcMain.on('recargar_ventana_ingreso', (e, row) => {
+        ventanaingreso.reload();
     });
 
 
