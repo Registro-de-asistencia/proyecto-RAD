@@ -27,7 +27,7 @@ bingresa.addEventListener('click', () => {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '',
+        password: '241522',
         database: 'basededatos_rad'
     });
 
@@ -39,6 +39,7 @@ bingresa.addEventListener('click', () => {
         }
     });
 
+
     let consulta = 'select * from trabajadores where rut="' + value_rut + '"';
     console.log(consulta);
     connection.query(consulta, function(err, rows, fields) {
@@ -48,11 +49,12 @@ bingresa.addEventListener('click', () => {
             return
         }
         connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, Fin, id_trabajador) VALUES (NOW(), NOW(), ' + rows[0].id_trabajador + ')');
-        // ipcRenderer.send('ingreso_periodo_de_tiempo', "output");
+        let dato = "Hacer conexion con index";
+        ipcRenderer.send('newdato', dato);
+        alert("Se ha ingresado un nuevo registro.");
 
     });
 
-    //alert('Se a ingresado un período de tiempo nuevo');
 
 
 

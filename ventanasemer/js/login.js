@@ -21,7 +21,7 @@ const volver_inicio = () => {
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '241522',
     database: 'Basededatos_Rad'
 });
 

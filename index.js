@@ -10,6 +10,7 @@ let ventanainfo;
 let idbotoned;
 let idbotonel;
 let idbotoninfo;
+let myVar;
 const util = require('util');
 
 
@@ -27,7 +28,7 @@ const { format } = require('date-fns');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: '241522',
     database: "basededatos_rad"
 });
 
@@ -69,12 +70,7 @@ app.on('ready', () => {
         mainWindows.close();
         app.relaunch();
     });
-    /*
-    ipcMain.on('ingreso_periodo_de_tiempo', (e, row) => {
-        mainWindows.close();
-        app.relaunch();
-    });
-*/
+    
     ipcMain.on('Prueba2', (e, row) => {
         crearventana_agregar();
     });
@@ -117,8 +113,13 @@ app.on('ready', () => {
     ipcMain.on('salirinfo', (e, row) => {
         ventanainfo.close();
     });
+    ipcMain.on('newdato', (e, row) => {
+        myVar = setInterval(  ()=>{
+            ventanaingreso.close();
+        }   , 3000);
+        app.relaunch();
+    });
 
-    //registrarjs
 
 
 });
