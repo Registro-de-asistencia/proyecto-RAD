@@ -8,7 +8,10 @@ const {
 const bingresa = document.querySelector('#ingresar');
 const biniciar = document.querySelector('#iniciar');
 const bloqueinfo = document.querySelector('#bloque_info');
+const user_enter = document.querySelector('#user');
 var myVar;
+
+
 
 
 const ingresar_login = () => {
@@ -16,6 +19,9 @@ const ingresar_login = () => {
     ipcRenderer.send('ingresarlogin', dato);
 }
 
+const enter_rut = () => {
+
+}
 
 const ingresar_registro = () => {
     info = `

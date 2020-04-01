@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../css/css/main.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="cs/registrar.css">
+
 </head>
 
 <body>
@@ -37,9 +38,11 @@
                         <div>
                             <span class="input-group-text" id="basic-addon1"></span>
                         </div>
-                        <input type="text" class="input100" id="user" placeholder="Registre su rut para ingreso" aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="input100" id="Input_Rut" placeholder="Registre su rut para ingreso" aria-label="Username" aria-describedby="basic-addon1">
                         <span class="focus-input100" data-placeholder="	&#xf26e;"></span>
+
                     </div>
+                    <div id="errorrut"></div>
                     <div style="margin-top: 10%;" class="container-login100-form-btn">
                         <button type="button" id="ingresar" class="login100-form-btn">
 							Ingresar Registro
@@ -55,7 +58,7 @@
     <div id="dropDownSelect1"></div>
 
     <!--===============================================================================================-->
-
+    <script src="js/val_registro.js"></script>
     <script src="js/registrar.js"></script>
 
 </body>

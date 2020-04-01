@@ -53,3 +53,13 @@ img {
     color: rgb(58, 58, 58);
     margin-top: 7%;
 }
+
+
+/*error rut*/
+
+#error_rut {
+    color: white;
+    background-color: red;
+    border-left: 20px;
+    box-sizing: border-box;
+}
