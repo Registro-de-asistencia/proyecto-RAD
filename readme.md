@@ -57,7 +57,7 @@ _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios
 * **Christian Matzner** - *Líder de Proyecto* - [Christian_Matzner](https://github.com/Matzner314)
 * **Sebastian Molina** - *Líder de Desarrollo de Software* - [Sebastian_Molina](https://github.com/elxcheester)
 * **Henry Ferhmann** - *Programador* - [Henry_Fehrmann](https://github.com/fehrmann11)
-* **Manuel Jaramillo** - *Documentación* - [Christian_Matzner](https://github.com/Plagah)
+* **Manuel Jaramillo** - *Documentación* - [Manuel_Jaramillo](https://github.com/Plagah)
 
 
  
