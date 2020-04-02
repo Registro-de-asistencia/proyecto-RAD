@@ -1,3 +1,4 @@
 #dependeicas
 /node_modules
 /electron
+/release-builds
