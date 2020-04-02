@@ -38,14 +38,13 @@ bingresa.addEventListener('click', () => {
     });
     
     if(error_rut.innerHTML === 'RUT INVÁLIDO.' ){
-        alert("Ha intentado ingresar un rut inválido o no está en la base de datos.")
+        alert("Ha intentado ingresar un rut inválido.")
         let dato = "Hacer conexion con index";
         ipcRenderer.send('recargar_ventana_ingreso', dato);
     }
     else{
 
         const user_enter = document.querySelector('#Input_Rut');
-        console.log("hola");
         value_rut = user_enter.value;
         
 
@@ -63,7 +62,7 @@ bingresa.addEventListener('click', () => {
                 ipcRenderer.send('recargar_ventana_ingreso', dato);
             }
             else{
-                connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, Fin, id_trabajador) VALUES (NOW(), NOW(), ' + rows[0].id_trabajador + ')');
+                connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, id_trabajador) VALUES (NOW(), ' + rows[0].id_trabajador + ')');
                 let dato = "Hacer conexion con index";
                 ipcRenderer.send('newdato', dato);
                 alert("Se ha ingresado un nuevo registro.");

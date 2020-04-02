@@ -77,13 +77,11 @@
                 if (nombret.indexOf(texto) !== -1 || apellidot.indexOf(texto) !== -1 || areat.indexOf(texto) !== -1) {
                     var fecha = format(new Date(row[i].Inicio), 'dd/MM/yyyy');
                     var Hora_inicio = format(new Date(row[i].Inicio), 'kk:mm:ss');
-                    var Hora_fin = format(new Date(row[i].Fin), 'kk:mm:ss');
                     lista_trabajadores = `
 													<td class="column1" style='text-align:center;'>${row[i].Nombre}</td>
 													<td class="column2" style='text-align:center;'>${row[i].Apellido}</td>
 													<td class="column4" style='text-align:center;'>${row[i].Area}</td>
 													<td class="column6" style='text-align:center;'>${Hora_inicio}</td>
-													<td class="column7" style='text-align:center;'>${Hora_fin}</td>
 													<td class="column8" style='text-align:center;'>${fecha}</td>
 													<td class="column10"><button onclick="enviarid2(${row[i].id_trabajador})" style='margin-left:25px;' class="btn btn-warning glyphicon glyphicon-user"></button></td>
 													<td class="column11"><button href="editar.html" onclick="enviarid(${row[i].id_trabajador})" class="btn btn-danger glyphicon glyphicon-pencil"></button></td>

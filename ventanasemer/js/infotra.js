@@ -36,24 +36,34 @@ ipcRenderer.on('tablainfo1', (e, row) => {
     rutR.innerHTML = row[0].Rut;
     areaR.innerHTML = row[0].Area;
     exigidasR.innerHTML = row[0].Volumen_de_horas;
+    var SumaHorasExtras = 0;
 
     var i = 0;
     while (i < row.length) {
 
         var fecha = format(new Date(row[i].Inicio), 'dd/MM/yyyy');
         var Hora_inicio = format(new Date(row[i].Inicio), 'kk:mm:ss');
-        var Hora_fin = format(new Date(row[i].Fin), 'kk:mm:ss');
-        var Horasextras = (format(new Date(row[i].Fin), 'kk') - format(new Date(row[i].Inicio), 'kk') - row[i].Volumen_de_horas);
-        var SumaHorasExtras = 0;
-        if (Horasextras > 0) {
-            SumaHorasExtras = SumaHorasExtras + Horasextras;
+        var Hora_inicio;
+        var Hora_fin;
+
+        if (i%2 ==0){
+            Hora_inicio = Hora_inicio + format(new Date(row[i].Inicio), 'kk');
         }
+        else{
+            Hora_fin = Hora_fin + format(new Date(row[i].Inicio), 'kk');
+        }
+
+        var horas_extras = Hora_fin - Hora_inicio - row[i].Volumen_de_horas;
+
+        if (horas_extras > 0) {
+            SumaHorasExtras = SumaHorasExtras + horas_extras;
+        }
+
         var lista_trabajadores = `
 										<td class="column1" style='text-align:center;'>${row[i].Nombre}</td>
 										<td class="column2" style='text-align:center;'>${row[i].Apellido}</td>
 										<td class="column4" style='text-align:center;'>${row[i].Area}</td>
 										<td class="column6" style='text-align:center;'>${Hora_inicio}</td>
-										<td class="column7" style='text-align:center;'>${Hora_fin}</td>
 										<td class="column8" style='text-align:center;'>${fecha}</td>
 										`;
         trabaja.innerHTML += lista_trabajadores;

@@ -329,10 +329,10 @@ function crearventana_info() {
             nodeIntegrationInWorker: true
         },
 
-        width: 1150,
-        height: 640,
-        fullscreen: true,
-        frame: false,
+        width: 1280,
+        height: 1204,
+        fullscreen: false,
+        frame: true,
         icon: __dirname + '/images/icons/icono.ico'
     });
 
@@ -425,7 +425,7 @@ ipcMain.on('outputagrega', (e, row) => {
             console.log(err.fatal);
             return
         }
-        connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, Fin, id_trabajador) VALUES (NOW(), NOW(), ' + rows[0].id_trabajador + ')');
+        connection.query('INSERT INTO Periodo_de_Trabajo(Inicio, id_trabajador) VALUES (NOW(),' + rows[0].id_trabajador + ')');
         imprimirtabla();
         imprimirtablaeliminar();
         ventanaagregar.close();
