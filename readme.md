@@ -50,6 +50,11 @@ _Para Ejecutar aplicación ejecuta el comando:_
 npm start
 ```
 
+_Para Empaquetar aplicación .exe (depende en qué s.o estés desarollando, en este caso será en windows) ejecuta el comando:_
+```
+npm run package-win
+```
+
 ## Autores ✒️
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
