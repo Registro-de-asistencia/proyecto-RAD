@@ -1,6 +1,6 @@
 # Registro de Asistencia Digital
 
-_El software RAD es una aplicación de escritorio desarollada junto al entorno nodejs y está realizado para tener un registro de asistencia para que el dueño de una sociedad agrícola y ganadera pueda tener el historial de las horas que trabajan sus operarios y ayuda para poder cancelar las horas extras de una forma eficiente y ordenada a sus trabajadores. A lo que posteriormente podría ayudarle no solo al dueño, si no a sus socios por si es una sociedad con más de un administrador._
+_El software RAD es una aplicación de escritorio desarollada junto al entorno nodejs y a la plataforma "electron". Está realizado para tener un registro de asistencia para que el dueño de una sociedad agrícola y ganadera pueda tener el historial de las horas que trabajan sus operarios y ayuda para poder cancelar las horas extras de una forma eficiente y ordenada a sus trabajadores. A lo que posteriormente podría ayudarle no solo al dueño, si no a sus socios por si es una sociedad con más de un administrador._
 
 ## Comenzando 🚀
 
